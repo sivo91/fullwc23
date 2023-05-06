@@ -48,77 +48,42 @@ const paramID = id
     const mongo = await res.json()
 
 
-                      if(id === 'svk_cz') {          
-            x.push(mongo[0])
-            x.push(mongo[1])
-            vx = mongo[0].game1
-            vy = mongo[1].game1 
-          } else if (id === 'svk_ca') {
-            x.push(mongo[0])
-            x.push(mongo[2])
-            vx = mongo[0].game2
-            vy = mongo[2].game1
-          }  else if (id === 'svk_latvia') {
-            x.push(mongo[0])
-            x.push(mongo[3])
-            vx = mongo[0].game3
-            vy = mongo[3].game1
-          } else if (id === 'svk_kaz') {
-            x.push(mongo[0])
-            x.push(mongo[4])
-            vx = mongo[0].game4
-            vy = mongo[4].game1
-          } else if (id === 'svk_nor') {
-            x.push(mongo[0])
-            x.push(mongo[5])
-            vx = mongo[0].game5
-            vy = mongo[5].game1
-          } else if (id === 'svk_slo') {
-            x.push(mongo[0])
-            x.push(mongo[6])
-            vx = mongo[0].game1
-            vy = mongo[6].game1
-          } else if (id === 'svk_swi') {
-            x.push(mongo[0])
-            x.push(mongo[7])
-            vx = mongo[0].game7
-            vy = mongo[7].game1
-          }    else if(id === 'cz_svk') { // x === 0 otocene garde aby ukazalo opacne garde 
-            x.push(mongo[1])
-            x.push(mongo[0])
-            vx = mongo[1].game1
-            vy = mongo[0].game1
-          } else if (id === 'ca_svk') {
+                      if(id === 'ca_svk') {          
             x.push(mongo[2])
             x.push(mongo[0])
             vx = mongo[2].game1
             vy = mongo[0].game2
-          } else if (id === 'lat_svk') {
+          } else if (id === 'ca_cz') {
+            x.push(mongo[2])
+            x.push(mongo[1])
+            vx = mongo[2].game2
+            vy = mongo[1].game2
+          }  else if (id === 'ca_lat') {
+            x.push(mongo[2])
             x.push(mongo[3])
-            x.push(mongo[0])
-            vx = mongo[3].game1
-            vy = mongo[0].game3
-          }  else if (id === 'kaz_svk') {
+            vx = mongo[2].game3
+            vy = mongo[3].game3
+          } else if (id === 'ca_kaz') {
+            x.push(mongo[2])
             x.push(mongo[4])
-            x.push(mongo[0])
-            vx = mongo[4].game1
-            vy = mongo[0].game4
-          } else if (id === 'nor_svk') {
+            vx = mongo[2].game4
+            vy = mongo[4].game3
+          } else if (id === 'ca_nor') {
+            x.push(mongo[2])
             x.push(mongo[5])
-            x.push(mongo[0])
-            vx = mongo[5].game1
-            vy = mongo[0].game5
-          } else if (id === 'slo_svk') {
+            vx = mongo[2].game5
+            vy = mongo[5].game3
+          } else if (id === 'ca_slo') {
+            x.push(mongo[2])
             x.push(mongo[6])
-            x.push(mongo[0])
-            vx = mongo[6].game1
-            vy = mongo[0].game6
-          }  else if (id === 'swi_svk') {
+            vx = mongo[2].game6
+            vy = mongo[6].game3
+          } else if (id === 'ca_swi') {
+            x.push(mongo[2])
             x.push(mongo[7])
-            x.push(mongo[0])
-            vx = mongo[7].game1
-            vy = mongo[0].game7
-          }
+            vx = mongo[2].game7
+            vy = mongo[7].game3
+          } 
      
 
     setTeamX(x[0])
@@ -145,7 +110,7 @@ useEffect(() => {
  const handleUpdate = async (id) => { 
  
 try {
-    await axios.put(`/api/team/${id}/slovakia`, {id, paramID} )
+    await axios.put(`/api/team/${id}/canada`, {id, paramID} )
 
     getData()
     

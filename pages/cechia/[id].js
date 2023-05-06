@@ -50,77 +50,42 @@ const paramID = id
     const mongo = await res.json()
 
 
-                      if(id === 'svk_cz') {          
-            x.push(mongo[0])
-            x.push(mongo[1])
-            vx = mongo[0].game1
-            vy = mongo[1].game1 
-          } else if (id === 'svk_ca') {
-            x.push(mongo[0])
-            x.push(mongo[2])
-            vx = mongo[0].game2
-            vy = mongo[2].game1
-          }  else if (id === 'svk_latvia') {
-            x.push(mongo[0])
-            x.push(mongo[3])
-            vx = mongo[0].game3
-            vy = mongo[3].game1
-          } else if (id === 'svk_kaz') {
-            x.push(mongo[0])
-            x.push(mongo[4])
-            vx = mongo[0].game4
-            vy = mongo[4].game1
-          } else if (id === 'svk_nor') {
-            x.push(mongo[0])
-            x.push(mongo[5])
-            vx = mongo[0].game5
-            vy = mongo[5].game1
-          } else if (id === 'svk_slo') {
-            x.push(mongo[0])
-            x.push(mongo[6])
-            vx = mongo[0].game1
-            vy = mongo[6].game1
-          } else if (id === 'svk_swi') {
-            x.push(mongo[0])
-            x.push(mongo[7])
-            vx = mongo[0].game7
-            vy = mongo[7].game1
-          }    else if(id === 'cz_svk') { // x === 0 otocene garde aby ukazalo opacne garde 
+                 if(id === 'cz_svk') {          
             x.push(mongo[1])
             x.push(mongo[0])
             vx = mongo[1].game1
-            vy = mongo[0].game1
-          } else if (id === 'ca_svk') {
+            vy = mongo[0].game1 
+          } else if (id === 'cz_ca') {
+            x.push(mongo[1])
             x.push(mongo[2])
-            x.push(mongo[0])
-            vx = mongo[2].game1
-            vy = mongo[0].game2
-          } else if (id === 'lat_svk') {
+            vx = mongo[1].game2
+            vy = mongo[2].game2
+          }  else if (id === 'cz_lat') {
+            x.push(mongo[1])
             x.push(mongo[3])
-            x.push(mongo[0])
-            vx = mongo[3].game1
-            vy = mongo[0].game3
-          }  else if (id === 'kaz_svk') {
+            vx = mongo[1].game3
+            vy = mongo[3].game2
+          } else if (id === 'cz_kaz') {
+            x.push(mongo[1])
             x.push(mongo[4])
-            x.push(mongo[0])
-            vx = mongo[4].game1
-            vy = mongo[0].game4
-          } else if (id === 'nor_svk') {
+            vx = mongo[1].game4
+            vy = mongo[4].game2
+          } else if (id === 'cz_nor') {
+            x.push(mongo[1])
             x.push(mongo[5])
-            x.push(mongo[0])
-            vx = mongo[5].game1
-            vy = mongo[0].game5
-          } else if (id === 'slo_svk') {
+            vx = mongo[1].game5
+            vy = mongo[5].game2
+          } else if (id === 'cz_slo') {
+            x.push(mongo[1])
             x.push(mongo[6])
-            x.push(mongo[0])
-            vx = mongo[6].game1
-            vy = mongo[0].game6
-          }  else if (id === 'swi_svk') {
+            vx = mongo[1].game6
+            vy = mongo[6].game2
+          } else if (id === 'cz_swi') {
+            x.push(mongo[1])
             x.push(mongo[7])
-            x.push(mongo[0])
-            vx = mongo[7].game1
-            vy = mongo[0].game7
-          }
+            vx = mongo[1].game7
+            vy = mongo[7].game2
+          } 
      
 
     setTeamX(x[0])
@@ -137,61 +102,6 @@ const paramID = id
 } 
 
 
-
-/* 
-
-  if(id === 'svk_cz') {  // sk
-    vx = x.game1
-    vy = y.game1
-  } else if(id === 'svk_lat') {
-    vx = x.game3
-    vy = y.game1
-  } else if(id === 'svk_ca') {
-    vx = x.game2
-    vy = y.game1
-  } else if(id === 'svk_swi') {
-    vx = x.game7
-    vy = y.game1
-  } else if(id === 'svk_kaz') {
-    vx = x.game4
-    vy = y.game1
-  } else if (id === 'svk_slo') {
-    vx = x.game6
-    vy = y.game1
-  } else if (id === 'svk_nor') {
-    vx = x.game5
-    vy = y.game1
-  } else if(id === 'cz_svk') {  // cz
-    vx = x.game1
-    vy = y.game1
-  } else if(id === 'ca_svk') {  // ca
-     vx = x.game1
-     vy = y.game2
-  } else if(id === 'kaz_svk') { 
-     vx = x.game1
-     vy = y.game4
-  }  else if(id === 'lat_svk') {  
-     vx = x.game1
-     vy = y.game3
-  } else if(id === 'swi_svk') {  
-     vx = x.game1
-     vy = y.game7
-  }  else if(id === 'slo_svk') {  
-     vx = x.game1
-     vy = y.game6
-  } else if(id === 'nor_svk') {  
-     vx = x.game1
-     vy = y.game5
-  }  */
-
-
- 
-
-   
-
-
-
- 
 useEffect(() => {
   getData()
 },[])
@@ -202,7 +112,7 @@ useEffect(() => {
  const handleUpdate = async (id) => { 
  
 try {
-    await axios.put(`/api/team/${id}/slovakia`, {id, paramID} )
+    await axios.put(`/api/team/${id}/cechia`, {id, paramID} )
 
     getData()
     

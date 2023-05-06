@@ -31,7 +31,7 @@ useEffect(() => {
           return (
             <>
          
-            <Link href={`/slovakia/${item.even}`} key={item._id} 
+            <Link href={`/canada/${item.even}`} key={item._id} 
                   style={{ textDecoration: 'none', color: 'black' }}>
               <div className="card" key={item.even}>
               <h6 className='text-center text-light mt-2'>{item.date}</h6>
@@ -122,7 +122,7 @@ useEffect(() => {
 
 
       <div className="mantinel">
-        { path === '/slovakia/slovakia' && showTeam(data.svk) } 
+        { path === '/canada/canada' && showTeam(data.ca) } 
       </div>
 
       <Link href={'/'}>
