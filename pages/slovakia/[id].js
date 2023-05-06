@@ -17,81 +17,8 @@ import dynamic from 'next/dynamic'
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false }); 
 
 
-//export default dynamic (() => Promise.resolve(Home), {ssr: false})
 
-
-
-/*   export async function getServerSideProps(context) {
-  const { params } = context
-  const { id } = params
-   await db.connect();
-   const groupB = await Team.find({})
-   await db.disconnect();
- 
-  let x = {}
-  let y = {}
-         if(id === 'svk_cz') {
-    x = groupB[0]
-    y = groupB[1]
-  } else if(id === 'svk_lat') {
-    x = groupB[0]
-    y = groupB[3]
-  } else if(id === 'svk_ca') {
-    x = groupB[0]
-    y = groupB[2]
-  } else if(id === 'svk_swi') {
-    x = groupB[0]
-    y = groupB[7]
-  } else if(id === 'svk_kaz') {
-    x = groupB[0]
-    y = groupB[4]
-  } else if (id === 'svk_slo') {
-    x = groupB[0]
-    y = groupB[6]
-  } else if (id === 'svk_nor') {
-    x = groupB[0]
-    y = groupB[5]
- // czech
-  } else if(id === 'cz_svk') {
-     x = groupB[1]
-    y = groupB[0]
-  }  else if(id === 'ca_svk') {  
-     x = groupB[2]
-    y = groupB[0]
-  } else if(id === 'kaz_svk') { 
-     x = groupB[4]
-    y = groupB[0]
-  }  else if(id === 'lat_svk') {  
-     x = groupB[3]
-    y = groupB[0]
-  }  else if(id === 'swi_svk') {  
-     x = groupB[7]
-    y = groupB[0]
-  }  else if(id === 'slo_svk') {  
-     x = groupB[6]
-    y = groupB[0]
-  } else if(id === 'nor_svk') {  
-     x = groupB[5]
-    y = groupB[0]
-  } 
-   return {
-    props: {
-      dataX: JSON.parse(JSON.stringify(x)),
-      dataY: JSON.parse(JSON.stringify(y))
-    }
-  }
-} */ 
-
-
-
-//*********************************************************
-
-
-const Index = (   ) => {
-
-//const { dataX, dataY } = props
-//console.log(  dataVX, dataVY) 
-//const {teams} = useTeamsCountext ()
+const Index = () => {
 
 const router = useRouter()
 const  {id} = router.query
@@ -107,9 +34,6 @@ const paramID = id
  const [voteY, setVoteY] = useState(0)
 
 
-
-
- 
 
  useEffect(() => {
  },[id])
@@ -130,47 +54,73 @@ const paramID = id
             x.push(mongo[0])
             x.push(mongo[1])
             vx = mongo[0].game1
-            vy = mongo[1].game1 // undefined !?
-          } /* else if (id === 'svk_latvia') {
-            x.push(mongo[0])
-            y.push(mongo[3])
+            vy = mongo[1].game1 
           } else if (id === 'svk_ca') {
             x.push(mongo[0])
-            y.push(mongo[2])
-          } else if (id === 'svk_swi') {
+            x.push(mongo[2])
+            vx = mongo[0].game2
+            vy = mongo[2].game1
+          }  else if (id === 'svk_latvia') {
             x.push(mongo[0])
-            y.push(mongo[7])
+            x.push(mongo[3])
+            vx = mongo[0].game3
+            vy = mongo[3].game1
           } else if (id === 'svk_kaz') {
             x.push(mongo[0])
-            y.push(mongo[4])
-          } else if (id === 'svk_slo') {
-            x.push(mongo[0])
-            y.push(mongo[6])
+            x.push(mongo[4])
+            vx = mongo[0].game4
+            vy = mongo[4].game1
           } else if (id === 'svk_nor') {
             x.push(mongo[0])
-            y.push(mongo[5])
-          } else if(id === 'cz_svk') { // x === 0 otocene garde aby ukazalo opacne garde 
+            x.push(mongo[5])
+            vx = mongo[0].game5
+            vy = mongo[5].game1
+          } else if (id === 'svk_slo') {
             x.push(mongo[0])
-            y.push(mongo[1])
+            x.push(mongo[6])
+            vx = mongo[0].game1
+            vy = mongo[6].game1
+          } else if (id === 'svk_swi') {
+            x.push(mongo[0])
+            x.push(mongo[7])
+            vx = mongo[0].game7
+            vy = mongo[7].game1
+          }    else if(id === 'cz_svk') { // x === 0 otocene garde aby ukazalo opacne garde 
+            x.push(mongo[1])
+            x.push(mongo[0])
+            vx = mongo[1].game1
+            vy = mongo[0].game1
           } else if (id === 'ca_svk') {
+            x.push(mongo[2])
             x.push(mongo[0])
-            y.push(mongo[2])
-          } else if (id === 'kaz_svk') {
-            x.push(mongo[0])
-            y.push(mongo[4])
+            vx = mongo[2].game1
+            vy = mongo[0].game2
           } else if (id === 'lat_svk') {
+            x.push(mongo[3])
             x.push(mongo[0])
-            y.push(mongo[3])
-          } else if (id === 'swi_svk') {
+            vx = mongo[3].game1
+            vy = mongo[0].game3
+          }  else if (id === 'kaz_svk') {
+            x.push(mongo[4])
             x.push(mongo[0])
-            y.push(mongo[7])
-          } else if (id === 'slo_svk') {
-            x.push(mongo[0])
-            y.push(mongo[6])
+            vx = mongo[4].game1
+            vy = mongo[0].game4
           } else if (id === 'nor_svk') {
+            x.push(mongo[5])
             x.push(mongo[0])
-            y.push(mongo[5])
-          } */ 
+            vx = mongo[5].game1
+            vy = mongo[0].game5
+          } else if (id === 'slo_svk') {
+            x.push(mongo[6])
+            x.push(mongo[0])
+            vx = mongo[6].game1
+            vy = mongo[0].game6
+          }  else if (id === 'swi_svk') {
+            x.push(mongo[7])
+            x.push(mongo[0])
+            vx = mongo[7].game1
+            vy = mongo[0].game7
+          }
      
 
     setTeamX(x[0])
