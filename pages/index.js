@@ -1,8 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import axios from 'axios';
-import { FaGlideG } from 'react-icons/fa';
+
+import dynamic from 'next/dynamic'
+const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
+
+
 
 
 
@@ -14,19 +18,39 @@ export default function Index () {
 
   const [loading, setLoading] = React.useState(false)
   const [teams, setTeams] = React.useState([])
+
+
+ /*  TOTAL VOTES */
+  let totalVotes = 0
+  let donutsVotes = []
+
+  for(let i = 0; i < teams.length; i++) {
+    const x = Object.entries(teams[i]).reduce((total, [key, value]) => key.startsWith("game") ? total += value : total, 0);
+
+    donutsVotes.push(x)
+    totalVotes += x
+  }
+ //console.log(donutsVotes[0]) // ok
+
+
+ const svk = donutsVotes[0]
+ const cz = donutsVotes[1]
+ const ca = donutsVotes[2]
+ const lat = donutsVotes[3]
+ const kaz = donutsVotes[4]
+ const nor = donutsVotes[5]
+ const slo = donutsVotes[6]
+ const swi = donutsVotes[7]
+ const aus = donutsVotes[8]
+ const ger = donutsVotes[9]
+ const den = donutsVotes[10]
+ const hu = donutsVotes[11]
+ const fin = donutsVotes[12]
+ const swe = donutsVotes[13]
+ const fra = donutsVotes[14]
+ const usa = donutsVotes[15]
  
 
-
-let totalVotes = 0
-
-for(let i = 0; i < teams.length; i++) {
-
-  const x = Object.entries(teams[i]).reduce((total, [key, value]) => key.startsWith("game") ? total += value : total, 0);
-  totalVotes += x
-
-}
-
-// console.log(totalVotes) // ok
 
 
 async function getData () {
@@ -40,7 +64,7 @@ async function getData () {
     console.log(res.data)
    }) */
 
-/* const res = await axios('/api/getTeam/data') // ok
+   /* const res = await axios('/api/getTeam/data') // ok
    const mongo = await res.data
    setTeams(mongo)   */  
 
@@ -49,13 +73,11 @@ async function getData () {
     const data = await res.json()
     setTeams(data) */
 
-
     const res = await fetch ('/api/getTeam/data', { cache: "no-cache" } ) // great
     const data = await res.json()
-
-    setTeams(data)
-   
     
+    setTeams(data)
+       
     setLoading(false)
 
   } catch (error) {
@@ -64,7 +86,7 @@ async function getData () {
   }
 } 
 
-  
+
 useEffect(() => {
   getData()
 },[])
@@ -74,12 +96,6 @@ useEffect(() => {
     <>
 
      
-  
-   
-   
-         
-
-      
         {
           loading ? <p>loading</p> : 
           (
@@ -133,6 +149,78 @@ useEffect(() => {
             <button className='btn btn-outline-primary rounded-0 vstack mx-auto totalVotes fs-3'>
               Total Votes: {totalVotes}
             </button>
+
+         
+          <div className="donuts">
+           
+              <div className="donutChart">
+              <Chart 
+                 type='donut'
+                 width={370}
+                 height={370}
+                 series={[ aus, ger, den, hu, fin, swe, fra, usa]}
+
+                 options={{
+                  labels: ['Austria', 'Germany', 'Denmark', 'Hungary', 'Finland', 'Sweden', 'France', 'USA'],
+                  title: {
+                    text: 'Group A, Finland | Tampere'
+                  },
+                  plotOptions: {
+                    pie: {
+                      donut: {
+                        labels: {
+                          show: true,
+                          total: {
+                            show: true,
+                            fontSize: 20
+                
+                          }
+                        }
+                      }
+                    }
+                  }
+                 }}
+                 >
+
+
+              </Chart>
+            </div>
+
+            <div className="donutChart">
+              <Chart 
+                 type='donut'
+                 width={370}
+                 height={370}
+                 series={[ svk, cz, ca, lat, kaz, nor, slo, swi]}
+
+                 options={{
+                  labels: ['Slovakia', 'Czech Rep.', 'Canada', 'Latvia', 'Kazakhstan', 'Norway','Slovenia', 'Switzerland'],
+                  title: {
+                    text: 'Group B, Latvia | Riga'
+                  },
+                  plotOptions: {
+                    pie: {
+                      donut: {
+                        labels: {
+                          show: true,
+                          total: {
+                            show: true,
+                            fontSize: 20
+                
+                          }
+                        }
+                      }
+                    }
+                  }
+                 }}
+                 >
+
+
+              </Chart>
+            </div>
+
+          </div>
+           
             
             </>
           ) 
@@ -144,7 +232,20 @@ useEffect(() => {
  
       <style>{`
 
-      
+      .donuts {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 90px;
+
+      }
+
+      .donutChart {
+        position: relative;
+        width: 370px;
+        margin: 0 auto;
+      }
   
       .totalVotes {
         position: relateve;
