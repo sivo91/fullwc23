@@ -220,6 +220,10 @@ useEffect(() => {
             </div>
 
           </div>
+
+          <div className="bgIMG">
+            <img src="/bgImg.jpg" className='bgIm' alt="img" />
+          </div>
            
             
             </>
@@ -231,6 +235,24 @@ useEffect(() => {
 
  
       <style>{`
+
+      .bgIMG {
+        position: fixed;
+        left:0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index:0;
+      }
+
+      .bgIm {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: .06;
+      }
 
       .donuts {
         position: relative;
@@ -252,12 +274,14 @@ useEffect(() => {
         margin: 0 0 50px 0;
         border: 1px solid black;
         color: black;
+        z-index:2;
       }
 
       .teamsContainer {
         position: relative;
         width: 100%;
         padding-top: 100px;
+        z-index: 4;
       }
       .groupsAB {
         position: relative;
