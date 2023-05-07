@@ -63,9 +63,9 @@ useEffect(() => {
     <>
 
      
-    <div className="teamsContainer">
+  
 
-     <div className="groupsAB">
+   
          
 
   
@@ -124,9 +124,9 @@ useEffect(() => {
      }
        
 
-     </div>
+ 
 
-    </div>
+ 
      
 
 
@@ -135,7 +135,7 @@ useEffect(() => {
       .teamsContainer {
         position: relative;
         width: 100%;
-        padding-top: 120px;
+        padding-top: 100px;
       }
       .groupsAB {
         position: relative;
@@ -152,10 +152,11 @@ useEffect(() => {
         width: 375px;
         margin: 15px;
         display: flex;
+        justify-content: center;
         flex-wrap: wrap;
         border: 1px solid black;
         border-radius: 8px;
-        background: #d1d1d1;
+        background: #f5f5f5;
       }
       .skupinaImgBox {
        position: relative;
