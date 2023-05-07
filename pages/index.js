@@ -2,8 +2,9 @@
 import React, { useEffect } from 'react'
 import Link from 'next/link'
 import axios from 'axios';
-import getAllTeams from '@/utils/getAllTeams';
-import { revalidatePath } from 'next/cache';
+import { FaGlideG } from 'react-icons/fa';
+
+
 
 
 
@@ -16,7 +17,17 @@ export default function Index () {
  
 
 
-  //console.log(teams)
+let totalVotes = 0
+
+for(let i = 0; i < teams.length; i++) {
+
+  const x = Object.entries(teams[i]).reduce((total, [key, value]) => key.startsWith("game") ? total += value : total, 0);
+  totalVotes += x
+
+}
+
+// console.log(totalVotes) // ok
+
 
 async function getData () {
 
@@ -64,74 +75,84 @@ useEffect(() => {
 
      
   
-
+   
    
          
 
-  
-     {
-      loading ? <p>loading</p> : 
-      (
-        <>
-          <div className="teamsContainer">
+      
+        {
+          loading ? <p>loading</p> : 
+          (
+            <>
+              <div className="teamsContainer">
 
-            <div className="groupsAB">
-                
-               <div className="div">
-                <h3 className='text-center'>Group A</h3>
-                <h4 className='text-center'>Tampere | Finland</h4>
+                <div className="groupsAB">
+                    
+                  <div className="div">
+                    <h3 className='text-center'>Group A</h3>
+                    <h4 className='text-center'>Tampere | Finland</h4>
 
-                <div className="skupinaA">
-                  {
-                  teams.slice(8,16).map( (item, i) => (
-                      
-                      <Link href={`${item.url1}`} key={i} >
-                      <div className="skupinaImgBox" >
-                        <img src={item.img} alt={item.img} />
-                      </div>
-                    </Link>
-                    ))
-                  }
+                    <div className="skupinaA">
+                      {
+                      teams.slice(8,16).map( (item, i) => (
+                          
+                          <Link href={`${item.url1}`} key={i} >
+                          <div className="skupinaImgBox" >
+                            <img src={item.img} alt={item.img} />
+                          </div>
+                        </Link>
+                        ))
+                      }
+                    </div>
+                  </div>
+
+
+                  
+
+                  <div className="div">
+                    <h3 className='text-center'>Group B</h3>
+                    <h4 className='text-center'>Riga | Latvia</h4>
+
+                    <div className="skupinaB">
+                      {
+                      teams.slice(0,8).map( (item, i) => (
+                          
+                          <Link href={`${item.url1}`} key={i} >
+                          <div className="skupinaImgBox" >
+                            <img src={item.img} alt={item.img} />
+                          </div>
+                        </Link>
+                        ))
+                      }
+                    </div>
+                  </div>
+
                 </div>
-              </div>
-
-
-              
-
-              <div className="div">
-                <h3 className='text-center'>Group B</h3>
-                <h4 className='text-center'>Riga | Latvia</h4>
-
-                <div className="skupinaB">
-                  {
-                  teams.slice(0,8).map( (item, i) => (
-                      
-                      <Link href={`${item.url1}`} key={i} >
-                      <div className="skupinaImgBox" >
-                        <img src={item.img} alt={item.img} />
-                      </div>
-                    </Link>
-                    ))
-                  }
-                </div>
-              </div>
-
             </div>
-         </div>
-        
-        </>
-      ) 
-     }
+
+            <button className='btn btn-outline-primary rounded-0 vstack mx-auto totalVotes fs-3'>
+              Total Votes: {totalVotes}
+            </button>
+            
+            </>
+          ) 
+        }
+
+ 
        
 
  
-
- 
-     
-
-
-
       <style>{`
+
+      
+  
+      .totalVotes {
+        position: relateve;
+        margin: 0 0 50px 0;
+        border: 1px solid black;
+        color: black;
+      }
+
       .teamsContainer {
         position: relative;
         width: 100%;
