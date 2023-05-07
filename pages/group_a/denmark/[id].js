@@ -219,7 +219,7 @@ try {
         } 
       
    
-       <Link href={'/'}>
+       <Link href={'/group_a/denmark/denmark'}>
          <button className='btn btn-primary vstack mx-auto rounded-0 mb-5 px-5'>
           Back
          </button>

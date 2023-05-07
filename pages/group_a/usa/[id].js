@@ -82,9 +82,9 @@ const paramID = id
             vy = mongo[14].game7
           } else if (id === 'usa_swe') {
             x.push(mongo[15])
-            x.push(mongo[14])
+            x.push(mongo[13])
             vx = mongo[15].game6
-            vy = mongo[14].game7
+            vy = mongo[13].game7
           }  
      
 
@@ -219,7 +219,7 @@ try {
         } 
       
    
-       <Link href={'/'}>
+       <Link href={'/group_a/usa/usa'}>
          <button className='btn btn-primary vstack mx-auto rounded-0 mb-5 px-5'>
           Back
          </button>

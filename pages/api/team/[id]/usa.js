@@ -42,11 +42,11 @@ const handler = async (req, res) => {
  p === 'usa_fin' && id === usa ? team.game5 += 1 :
  p === 'usa_fin' && id === fin ? team.game7 += 1 :
 
- p === 'usa_swe' && id === swe ? team.game6 += 1 :
- p === 'usa_swe' && id === usa ? team.game7 += 1 :
+ p === 'usa_swe' && id === usa ? team.game6 += 1 :
+ p === 'usa_swe' && id === swe ? team.game7 += 1 :
  
  p === 'usa_fra' && id === usa ? team.game7 += 1 :
- p === 'usa_fra' && id === usa ? team.game7 += 1 : ''
+ p === 'usa_fra' && id === fra ? team.game7 += 1 : ''
 
  
  
