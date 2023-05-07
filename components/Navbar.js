@@ -12,6 +12,11 @@ const Navbar = () => {
     setSideBar(!sideBar)
     console.log('adf')
   }
+
+
+  const closeSideMenu = () => {
+    setSideBar(false)
+  }
   
 
 
@@ -29,8 +34,8 @@ const Navbar = () => {
       
 
       <div className='puck'
-            onClick={openSideMenu}>
-        <FaHockeyPuck />
+            >
+        <FaHockeyPuck onClick={openSideMenu}/>
       </div>
 
      </nav>
@@ -41,86 +46,188 @@ const Navbar = () => {
         (
           <>
             <div className="sideBar">
-            <Link href='/' style={{ textDecoration: 'none' }}>
-              <h2 className='side-link ms-4 py-1' >
-                Slovakia
-              </h2>
+
+            <Link href='/slovakia/slovakia' style={{ textDecoration: 'none' }}
+             onClick={closeSideMenu}    >
+              <div className='link-box mt-1'>
+                <div className="sideImgBox">
+                  <img src="/svk.png" alt="img" className='sideImg'/>
+                </div>
+                <span className='side-link ' >
+                  Slovakia
+               </span>
+              </div>
             </Link>
-            <Link href='/' style={{ textDecoration: 'none' }}>
-              <h2 className='side-link ms-4 py-1' >
-                Czech Republic
-              </h2>
+
+            <Link href='/cecha/cechia' style={{ textDecoration: 'none' }}
+                  onClick={closeSideMenu}>
+              <div className='link-box'>
+                <div className="sideImgBox">
+                  <img src="/cz.png" alt="img" className='sideImg'/>
+                </div>
+                <span className='side-link ' >
+                  Czech Republic
+               </span>
+              </div>
             </Link>
-            <Link href='/' style={{ textDecoration: 'none' }}>
-              <h2 className='side-link ms-4 py-1' >
-                Canada
-              </h2>
+
+            <Link href='/finlad/finland' style={{ textDecoration: 'none' }}
+                  onClick={closeSideMenu}>
+              <div className='link-box'>
+                <div className="sideImgBox">
+                  <img src="/fin.png" alt="img" className='sideImg'/>
+                </div>
+                <span className='side-link ' >
+                  Finland
+               </span>
+              </div>
             </Link>
-            <Link href='/' style={{ textDecoration: 'none' }}>
-              <h2 className='side-link ms-4 py-1' >
-                Latvia
-              </h2>
+
+            <Link href='/sweden/sweden' style={{ textDecoration: 'none' }}
+                  onClick={closeSideMenu}>
+              <div className='link-box'>
+                <div className="sideImgBox">
+                  <img src="/swe.png" alt="img" className='sideImg'/>
+                </div>
+                <span className='side-link ' >
+                  Sweden
+               </span>
+              </div>
             </Link>
-            <Link href='/' style={{ textDecoration: 'none' }}>
-              <h2 className='side-link ms-4 py-1' >
-                Kazakhstan
-              </h2>
+
+            <Link href='/canada/canada' style={{ textDecoration: 'none' }}
+                  onClick={closeSideMenu}>
+              <div className='link-box'>
+                <div className="sideImgBox">
+                  <img src="/ca.png" alt="img" className='sideImg'/>
+                </div>
+                <span className='side-link ' >
+                  Canada
+               </span>
+              </div>
             </Link>
-            <Link href='/' style={{ textDecoration: 'none' }}>
-              <h2 className='side-link ms-4 py-1' >
-                Norway
-              </h2>
+            <Link href='/latvia/latvia' style={{ textDecoration: 'none' }}
+                  onClick={closeSideMenu}>
+              <div className='link-box'>
+                <div className="sideImgBox">
+                  <img src="/lat.png" alt="img" className='sideImg'/>
+                </div>
+                <span className='side-link ' >
+                  Latvia
+               </span>
+              </div>
             </Link>
-            <Link href='/' style={{ textDecoration: 'none' }}>
-              <h2 className='side-link ms-4 py-1' >
-                Slovenia
-              </h2>
+            <Link href='/usa/usa' style={{ textDecoration: 'none' }}
+                  onClick={closeSideMenu}>
+              <div className='link-box'>
+                <div className="sideImgBox">
+                  <img src="/usa.png" alt="img" className='sideImg'/>
+                </div>
+                <span className='side-link ' >
+                  USA
+               </span>
+              </div>
             </Link>
-            <Link href='/' style={{ textDecoration: 'none' }}>
-              <h2 className='side-link ms-4 py-1' >
-                Switzerland
-              </h2>
+            <Link href='/france/france' style={{ textDecoration: 'none' }}
+                  onClick={closeSideMenu}>
+              <div className='link-box'>
+                <div className="sideImgBox">
+                  <img src="/fra.png" alt="img" className='sideImg'/>
+                </div>
+                <span className='side-link ' >
+                  France
+               </span>
+              </div>
             </Link>
-            <Link href='/' style={{ textDecoration: 'none' }}>
-              <h2 className='side-link ms-4 py-1' >
-                Austria
-              </h2>
+            <Link href='/denmark/denmark' style={{ textDecoration: 'none' }} 
+                  onClick={closeSideMenu}>
+              <div className='link-box'>
+                <div className="sideImgBox">
+                  <img src="/den.png" alt="img" className='sideImg'/>
+                </div>
+                <span className='side-link ' >
+                  Denmark
+               </span>
+              </div>
             </Link>
-            <Link href='/' style={{ textDecoration: 'none' }}>
-              <h2 className='side-link ms-4 py-1' >
-                Germany
-              </h2>
+            <Link href='/hungary/hungary' style={{ textDecoration: 'none' }}
+                  onClick={closeSideMenu}>
+              <div className='link-box'>
+                <div className="sideImgBox">
+                  <img src="/hu.png" alt="img" className='sideImg'/>
+                </div>
+                <span className='side-link ' >
+                  Hungary
+               </span>
+              </div>
             </Link>
-            <Link href='/' style={{ textDecoration: 'none' }}>
-              <h2 className='side-link ms-4 py-1' >
-                Denmark
-              </h2>
+            <Link href='/germany/germany' style={{ textDecoration: 'none' }}
+                  onClick={closeSideMenu}>
+              <div className='link-box'>
+                <div className="sideImgBox">
+                  <img src="/ger.png" alt="img" className='sideImg'/>
+                </div>
+                <span className='side-link ' >
+                  Germany
+               </span>
+              </div>
             </Link>
-            <Link href='/' style={{ textDecoration: 'none' }}>
-              <h2 className='side-link ms-4 py-1' >
-                Hungary
-              </h2>
+            <Link href='/austria/austria' style={{ textDecoration: 'none' }}
+                  onClick={closeSideMenu}>
+              <div className='link-box'>
+                <div className="sideImgBox">
+                  <img src="/aus.png" alt="img" className='sideImg'/>
+                </div>
+                <span className='side-link ' >
+                  Austria
+               </span>
+              </div>
             </Link>
-            <Link href='/' style={{ textDecoration: 'none' }}>
-              <h2 className='side-link ms-4 py-1' >
-                Finland
-              </h2>
+            <Link href='/slovenia/slovenia' style={{ textDecoration: 'none' }}
+                  onClick={closeSideMenu}>
+              <div className='link-box'>
+                <div className="sideImgBox">
+                  <img src="/slovenia.png" alt="img" className='sideImg'/>
+                </div>
+                <span className='side-link ' >
+                  Slovenia
+               </span>
+              </div>
             </Link>
-            <Link href='/' style={{ textDecoration: 'none' }}>
-              <h2 className='side-link ms-4 py-1' >
-                Sweden
-              </h2>
+            <Link href='/kazakhstan/kazakhstan' style={{ textDecoration: 'none' }}
+                  onClick={closeSideMenu}>
+              <div className='link-box'>
+                <div className="sideImgBox">
+                  <img src="/kaz.png" alt="img" className='sideImg'/>
+                </div>
+                <span className='side-link ' >
+                  Kazakhstan
+               </span>
+              </div>
             </Link>
-            <Link href='/' style={{ textDecoration: 'none' }}>
-              <h2 className='side-link ms-4 py-1' >
-                France
-              </h2>
+            <Link href='/norway/norway' style={{ textDecoration: 'none' }}
+                  onClick={closeSideMenu}>
+              <div className='link-box'>
+                <div className="sideImgBox">
+                  <img src="/nor.png" alt="img" className='sideImg'/>
+                </div>
+                <span className='side-link ' >
+                  Norway
+               </span>
+              </div>
             </Link>
-            <Link href='/' style={{ textDecoration: 'none' }}>
-              <h2 className='side-link ms-4 py-1' >
-                USA
-              </h2>
+            <Link href='/switzerland/sweitzerland' style={{ textDecoration: 'none' }}
+                  onClick={closeSideMenu}>
+              <div className='link-box mb-1'>
+                <div className="sideImgBox">
+                  <img src="/swi.png" alt="img" className='sideImg'/>
+                </div>
+                <span className='side-link ' >
+                  Switzerland
+               </span>
+              </div>
             </Link>
+           
             </div>
           </>
         )
@@ -129,22 +236,49 @@ const Navbar = () => {
 
      <style>{`
 
-     .side-link {
-      color: black;
-      border-bottom: 1px solid gray;
-       x-index: 5566;
+     .link-box {
+      position: relative;
+      display: flex;
+      padding-left: 5px;
+      margin: 2px 2px 2px 4px;
+      border: 1px solid black;
+      border-radius: 4px;
      }
 
-     .side-link:nth-child(2){
-       color: red;
+     .sideImgBox {
+      position: relative;
+      width: 45px;
+      height: 30px;
+      top: 2.6px;
+      border: 1px solid black;
+      overflow: hidden;
+      border-radius: 4px;
      }
+
+     .sideImg {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+     }
+
+     .side-link {
+       color: black;
+       x-index: 5566;
+       position: relative;
+       margin-left: 4px;
+       font-size : 24px;
+     }
+
+     
 
      .sideBar {
       position: fixed;
       width: 250px;
-      height: 70%;
+      height: 648px;
       background: white;
       top: 65px;
+      border-radius: 4px;
       z-index: 5566!important;
       overflow-y: scroll;
       border-bottom-right-radius: 8px;
