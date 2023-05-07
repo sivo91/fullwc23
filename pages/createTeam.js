@@ -19,19 +19,21 @@ const CreateNew = () => {
  const [game7, setGame7] = useState(0)
  const [name, setName] = useState('')
  const [img, setImg] = useState('')
+ const [color, setColor] = useState('')
+ const [url, setUrl] = useState('')
  const [x, setX] = useState([])
  const [loading, setLoading] = useState(false)
  const [err, setErr] = useState(null)
 
  const data = {
-  name, game1, game2,game3, game4, game5, game6, game7, img
+  name, game1, game2,game3, game4, game5, game6, game7, img, color, url
 }
 
 
 const fetchData = async () => {
     try {
       setLoading(true)
-      const res = await axios.get('/api/teamsMongo');
+      const res = await axios.get('/api/getTeam/data');
       const data = res.data;
       setX(data);
       
@@ -69,7 +71,10 @@ const handleCreate = async (e) => {
      setGame5(0)
      setGame6(0)
      setGame7(0)
+     setColor('')
+     setUrl('')  // /slovakia/slovakia
      setImg('')
+
      fetchTeam()
   
    } catch (error) {
@@ -78,9 +83,6 @@ const handleCreate = async (e) => {
    }  
 
 }
-
-
-
 
 
 
@@ -128,6 +130,18 @@ const handleCreate = async (e) => {
                 value={name}
                 className='mt-2'
                 onChange={e => setName(e.target.value)} />
+
+        <input type="text"
+                placeholder='path'
+                value={url}
+                className='mt-2'
+                onChange={e => setUrl(e.target.value)} />
+
+        <input type="text"
+                placeholder='color'
+                value={color}
+                className='mt-2'
+                onChange={e => setColor(e.target.value)} />
 
          <input type="number"
                 placeholder='game1'

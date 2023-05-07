@@ -4,6 +4,8 @@ import Team from "@/modules/Team";
 
 const handler = async (req, res) => {
 
+
+
       await db.connect();
       const newTeam = new Team({
         ...req.body,

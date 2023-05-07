@@ -16,7 +16,7 @@ export default function Index () {
  
 
 
-  console.log(teams)
+  //console.log(teams)
 
 async function getData () {
 
@@ -41,6 +41,7 @@ async function getData () {
 
     const res = await fetch ('/api/getTeam/data', { cache: "no-cache" } ) // great
     const data = await res.json()
+
     setTeams(data)
    
     
@@ -52,9 +53,6 @@ async function getData () {
   }
 } 
 
-
-
- //{next: {revalidate: 1}}
   
 useEffect(() => {
   getData()
@@ -79,12 +77,20 @@ useEffect(() => {
 
             <div className="groupsAB">
                 
-              <div>
-                <h3 className='text-center'>Group A</h3>
+               <div className="div">
+                <h3 className='text-center'>Group B</h3>
+
                 <div className="skupinaA">
-                <div className="skupinaImgBox">
-                  <img src="./svk.png" alt="svkimg" />
-                </div>
+                  {
+                  teams.slice(8,16).map( (item, i) => (
+                      
+                      <Link href={`/team/${item.url1}`} key={i} >
+                      <div className="skupinaImgBox" >
+                        <img src={item.img} alt={item.img} />
+                      </div>
+                    </Link>
+                    ))
+                  }
                 </div>
               </div>
 
@@ -96,15 +102,15 @@ useEffect(() => {
 
                 <div className="skupinaB">
                   {
-                teams.map( (item, i) => (
-                    
-                    <Link href={`${item.url1}`} key={i} >
-                    <div className="skupinaImgBox" >
-                      <img src={item.img} alt={item.img} />
-                    </div>
-                  </Link>
-                  ))
-                }
+                  teams.slice(0,8).map( (item, i) => (
+                      
+                      <Link href={`${item.url1}`} key={i} >
+                      <div className="skupinaImgBox" >
+                        <img src={item.img} alt={item.img} />
+                      </div>
+                    </Link>
+                    ))
+                  }
                 </div>
               </div>
 

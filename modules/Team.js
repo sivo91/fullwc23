@@ -34,9 +34,6 @@ const TeamSchema = new mongoose.Schema(
     },
     url1: {
       type: String
-    },
-    id: {
-      type: String
     }
   },
   {
