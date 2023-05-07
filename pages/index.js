@@ -85,7 +85,7 @@ useEffect(() => {
                   {
                   teams.slice(8,16).map( (item, i) => (
                       
-                      <Link href={`/team/${item.url1}`} key={i} >
+                      <Link href={`${item.url1}`} key={i} >
                       <div className="skupinaImgBox" >
                         <img src={item.img} alt={item.img} />
                       </div>
