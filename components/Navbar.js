@@ -59,7 +59,7 @@ const Navbar = () => {
               </div>
             </Link>
 
-            <Link href='/cecha/cechia' style={{ textDecoration: 'none' }}
+            <Link href='/cechia/cechia' style={{ textDecoration: 'none' }}
                   onClick={closeSideMenu}>
               <div className='link-box'>
                 <div className="sideImgBox">
@@ -71,7 +71,7 @@ const Navbar = () => {
               </div>
             </Link>
 
-            <Link href='/finlad/finland' style={{ textDecoration: 'none' }}
+            <Link href='/group_a/finland/finland' style={{ textDecoration: 'none' }}
                   onClick={closeSideMenu}>
               <div className='link-box'>
                 <div className="sideImgBox">
@@ -83,7 +83,7 @@ const Navbar = () => {
               </div>
             </Link>
 
-            <Link href='/sweden/sweden' style={{ textDecoration: 'none' }}
+            <Link href='/group_a/sweden/sweden' style={{ textDecoration: 'none' }}
                   onClick={closeSideMenu}>
               <div className='link-box'>
                 <div className="sideImgBox">
@@ -117,7 +117,7 @@ const Navbar = () => {
                </span>
               </div>
             </Link>
-            <Link href='/usa/usa' style={{ textDecoration: 'none' }}
+            <Link href='/group_a/usa/usa' style={{ textDecoration: 'none' }}
                   onClick={closeSideMenu}>
               <div className='link-box'>
                 <div className="sideImgBox">
@@ -128,7 +128,7 @@ const Navbar = () => {
                </span>
               </div>
             </Link>
-            <Link href='/france/france' style={{ textDecoration: 'none' }}
+            <Link href='/group_a/france/france' style={{ textDecoration: 'none' }}
                   onClick={closeSideMenu}>
               <div className='link-box'>
                 <div className="sideImgBox">
@@ -139,7 +139,7 @@ const Navbar = () => {
                </span>
               </div>
             </Link>
-            <Link href='/denmark/denmark' style={{ textDecoration: 'none' }} 
+            <Link href='/group_a/denmark/denmark' style={{ textDecoration: 'none' }} 
                   onClick={closeSideMenu}>
               <div className='link-box'>
                 <div className="sideImgBox">
@@ -150,7 +150,7 @@ const Navbar = () => {
                </span>
               </div>
             </Link>
-            <Link href='/hungary/hungary' style={{ textDecoration: 'none' }}
+            <Link href='/group_a/hungary/hungary' style={{ textDecoration: 'none' }}
                   onClick={closeSideMenu}>
               <div className='link-box'>
                 <div className="sideImgBox">
@@ -161,7 +161,7 @@ const Navbar = () => {
                </span>
               </div>
             </Link>
-            <Link href='/germany/germany' style={{ textDecoration: 'none' }}
+            <Link href='/group_a/germany/germany' style={{ textDecoration: 'none' }}
                   onClick={closeSideMenu}>
               <div className='link-box'>
                 <div className="sideImgBox">
@@ -172,7 +172,7 @@ const Navbar = () => {
                </span>
               </div>
             </Link>
-            <Link href='/austria/austria' style={{ textDecoration: 'none' }}
+            <Link href='/group_a/austria/austria' style={{ textDecoration: 'none' }}
                   onClick={closeSideMenu}>
               <div className='link-box'>
                 <div className="sideImgBox">
@@ -216,7 +216,7 @@ const Navbar = () => {
                </span>
               </div>
             </Link>
-            <Link href='/switzerland/sweitzerland' style={{ textDecoration: 'none' }}
+            <Link href='/switzerland/switzerland' style={{ textDecoration: 'none' }}
                   onClick={closeSideMenu}>
               <div className='link-box mb-1'>
                 <div className="sideImgBox">
