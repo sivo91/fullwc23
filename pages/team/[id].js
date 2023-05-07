@@ -35,7 +35,7 @@ useEffect(() => {
           return (
             <>
          
-            <Link href={`/slovakia/${item.even}`} key={item._id} 
+            <Link href={`/game/${item.even}`} key={item._id} 
                   style={{ textDecoration: 'none', color: 'black' }}>
               <div className="card" key={item.even}>
               <h6 className='text-center text-light mt-2'>{item.date}</h6>
@@ -79,30 +79,30 @@ useEffect(() => {
  
     let output = ''
 
-    if(path === '/austria') {
+              if(id === 'austria') {
         output = ''
-        output = TeamName[8]
-    } else if (path === '/cechia/cechia') {
+        output = TeamName[0]
+    } else if (id === 'germany') {
        output = ''
        output = TeamName[1]
-    } else if (path === '/canada/canda') {
+    } else if (id === 'denmark') {
        output = ''
        output = TeamName[2]
-    } else if (path === '/kazakhstan/kazakhstan') {
+    } else if (id === 'hungary') {
        output = ''
        output = TeamName[3]
-    } else if (path === '/latvia/latvia' ) {
+    } else if (id === 'finland' ) {
        output = ''
        output = TeamName[4]
-    } else if (path === '/switzerland/switzerland') {
+    } else if (id === 'sweden') {
        output = ''
        output = TeamName[5]
-    } else if (path === '/slovenia/slovenia') {
+    } else if (id === 'france') {
        output = ''
        output = TeamName[6]
-    } else if (path === '/norway/norway') {
+    } else if (id === 'usa') {
        output = ''
-       output = TeamName.length - 1
+       output = TeamName[7]
     }
 
     return <h2 className='text-center mb-2'>Team {output}</h2>
@@ -124,7 +124,14 @@ useEffect(() => {
 
 
       <div className="mantinel">
-        { id === '/austria' && showTeam(data.aus) } 
+        { id === 'austria' && showTeam(data.aus) } 
+        { id === 'germany' && showTeam(data.ger) } 
+        { id === 'denmark' && showTeam(data.den) } 
+        { id === 'hungary' && showTeam(data.hu) } 
+        { id === 'finland' && showTeam(data.fin) } 
+        { id === 'sweden' && showTeam(data.swe) } 
+        { id === 'france' && showTeam(data.fra) } 
+        { id === 'usa' && showTeam(data.usa) } 
       </div>
 
       <Link href={'/'}>

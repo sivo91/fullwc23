@@ -78,7 +78,8 @@ useEffect(() => {
             <div className="groupsAB">
                 
                <div className="div">
-                <h3 className='text-center'>Group B</h3>
+                <h3 className='text-center'>Group A</h3>
+                <h4 className='text-center'>Tampere | Finland</h4>
 
                 <div className="skupinaA">
                   {
@@ -99,6 +100,7 @@ useEffect(() => {
 
               <div className="div">
                 <h3 className='text-center'>Group B</h3>
+                <h4 className='text-center'>Riga | Latvia</h4>
 
                 <div className="skupinaB">
                   {
