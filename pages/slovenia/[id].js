@@ -9,6 +9,7 @@ import axios from 'axios';
 import Link from 'next/link';
 import { useRouter } from 'next/router'
 //import  Chart  from "react-apexcharts";
+import { GiHockey } from "react-icons/gi";
 import { Loading } from "@nextui-org/react";
 //import { useTeamsCountext } from '../context/teams_context'
 
@@ -136,7 +137,7 @@ try {
       <>
 
         {
-          loading ? <div className='text-center mt-5'><Loading type="points" /></div> :
+          loading ? <p className='loadingIcon text-center'><GiHockey /></p> :
           (
             <>
               <h1 className='text-center mt-5 pt-5'>{teamX?.name} vs {teamY?.name}</h1>
@@ -232,6 +233,13 @@ try {
 
 
        <style>{`
+           .loadingIcon {
+        position: relative;
+        margin-top: 200px;
+        margin-bottom: 300px;
+        font-size: 200px;
+      }
+
            .percantaPanel {
             position: relative;
             width: 375px;
