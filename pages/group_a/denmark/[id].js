@@ -48,7 +48,7 @@ const paramID = id
 
     const res = await fetch ('/api/getTeam/data', { cache: "no-cache" } ) // great
     const mongo = await res.json()
-    console.log(mongo)
+    //console.log(mongo)
 
                   if(id === 'den_hu') {    // Den    
             x.push(mongo[10])

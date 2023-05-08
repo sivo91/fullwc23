@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import axios from 'axios';
-
+import { Tooltip } from '@nextui-org/react';
 import dynamic from 'next/dynamic'
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
 
@@ -24,7 +24,7 @@ export default function Index () {
   let totalVotes = 0
   let donutsVotes = []
 
-  for(let i = 0; i < teams.length; i++) {
+  for(let i = 0; i < teams.length ; i++) {
     const x = Object.entries(teams[i]).reduce((total, [key, value]) => key.startsWith("game") ? total += value : total, 0);
 
     donutsVotes.push(x)
@@ -34,21 +34,21 @@ export default function Index () {
 
 
  const svk = donutsVotes[0]
- const cz = donutsVotes[1]
- const ca = donutsVotes[2]
- const lat = donutsVotes[3]
- const kaz = donutsVotes[4]
- const nor = donutsVotes[5]
- const slo = donutsVotes[6]
- const swi = donutsVotes[7]
- const aus = donutsVotes[8]
- const ger = donutsVotes[9]
- const den = donutsVotes[10]
- const hu = donutsVotes[11]
- const fin = donutsVotes[12]
- const swe = donutsVotes[13]
- const fra = donutsVotes[14]
- const usa = donutsVotes[15]
+ const cz = donutsVotes[1] 
+ const ca = donutsVotes[2] 
+ const lat = donutsVotes[3] 
+ const kaz = donutsVotes[4] 
+ const nor = donutsVotes[5] 
+ const slo = donutsVotes[6] 
+ const swi = donutsVotes[7] 
+ const aus = donutsVotes[8] 
+ const ger = donutsVotes[9] 
+ const den = donutsVotes[10] 
+ const hu = donutsVotes[11] 
+ const fin = donutsVotes[12] 
+ const swe = donutsVotes[13] 
+ const fra = donutsVotes[14] 
+ const usa = donutsVotes[15] 
  
 
 
@@ -112,10 +112,12 @@ useEffect(() => {
                       {
                       teams.slice(8,16).map( (item, i) => (
                           
-                          <Link href={`${item.url1}`} key={i} >
-                          <div className="skupinaImgBox" >
-                            <img src={item.img} alt={item.img} />
-                          </div>
+                         <Link href={`${item.url1}`} key={i} >
+                          <Tooltip content={item.name} color='primary'>
+                           <div className="skupinaImgBox" >
+                             <img src={item.img} alt={item.img} />
+                           </div>
+                          </Tooltip> 
                         </Link>
                         ))
                       }
@@ -134,9 +136,11 @@ useEffect(() => {
                       teams.slice(0,8).map( (item, i) => (
                           
                           <Link href={`${item.url1}`} key={i} >
-                          <div className="skupinaImgBox" >
-                            <img src={item.img} alt={item.img} />
-                          </div>
+                            <Tooltip content={item.name} color='primary'>
+                              <div className="skupinaImgBox" >
+                                <img src={item.img} alt={item.img} />
+                              </div>
+                            </Tooltip>  
                         </Link>
                         ))
                       }
