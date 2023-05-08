@@ -4,6 +4,7 @@ import Link from 'next/link'
 import axios from 'axios';
 import { Tooltip } from '@nextui-org/react';
 import dynamic from 'next/dynamic'
+import { GiHockey } from "react-icons/gi";
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
 
 
@@ -97,7 +98,7 @@ useEffect(() => {
 
      
         {
-          loading ? <p>loading</p> : 
+          loading ? <p className='loadingIcon text-center'><GiHockey /></p> : 
           (
             <>
               <div className="teamsContainer">
@@ -239,6 +240,13 @@ useEffect(() => {
 
  
       <style>{`
+
+      .loadingIcon {
+        position: relative;
+        margin-top: 200px;
+        margin-bottom: 300px;
+        font-size: 200px;
+      }
 
       .bgIMG {
         position: fixed;

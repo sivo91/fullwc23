@@ -34,7 +34,7 @@ const handler = async (req, res) => {
  
 
  p === 'cz_svk' && id === cz ? team.game1 += 1 :
- p === 'cz_svk' && id === sk ? team.game1 += 1 :
+ p === 'cz_svk' && id === svk ? team.game1 += 1 :
 
  p === 'cz_kaz' && id === cz ? team.game4 += 1 :
  p === 'cz_kaz' && id === kaz ? team.game2 += 1 :
