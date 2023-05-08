@@ -260,7 +260,7 @@ useEffect(() => {
         flex-wrap: wrap;
         justify-content: center;
         margin-bottom: 90px;
-
+        z-index: 2222;
       }
 
       .donutChart {
@@ -270,11 +270,11 @@ useEffect(() => {
       }
   
       .totalVotes {
-        position: relateve;
+        position: relative;
         margin: 0 0 50px 0;
         border: 1px solid black;
         color: black;
-        z-index:2;
+        z-index:22222;
       }
 
       .teamsContainer {
