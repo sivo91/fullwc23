@@ -98,7 +98,9 @@ useEffect(() => {
 
      
         {
-          loading ? <p className='loadingIcon text-center'><GiHockey /></p> : 
+          loading ? <div className='loadingImgBox'>
+                      <img src="./hockey.png" className='loadingImg' alt="img"/>
+                    </div> : 
           (
             <>
               <div className="teamsContainer">
@@ -241,12 +243,18 @@ useEffect(() => {
  
       <style>{`
 
-      .loadingIcon {
+      .loadingImgBox {
         position: relative;
-        margin-top: 200px;
-        margin-bottom: 300px;
-        font-size: 200px;
+        width: 200px;
+        height: 600px;
+        margin: 100px auto 100px;
+        top: 100px;
       }
+
+     .loadingImg {
+      position: relative;
+      width: 100%;
+     }
 
       .bgIMG {
         position: fixed;
