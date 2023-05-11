@@ -297,6 +297,7 @@ const Navbar = () => {
      
      nav {
       position: relative;
+      z-index: 9999999999999!important;
      }
 
      .titleNav {

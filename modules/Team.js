@@ -23,6 +23,9 @@ const TeamSchema = new mongoose.Schema(
     game7: { 
       type: Number,  
     },
+    champ: {
+      type: Number,
+    },
     name: {
       type: String
     }, 

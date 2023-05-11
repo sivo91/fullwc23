@@ -4,7 +4,6 @@ import Link from 'next/link'
 import axios from 'axios';
 import { Tooltip } from '@nextui-org/react';
 import dynamic from 'next/dynamic'
-import { GiHockey } from "react-icons/gi";
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
 
 
@@ -19,6 +18,27 @@ export default function Index () {
 
   const [loading, setLoading] = React.useState(false)
   const [teams, setTeams] = React.useState([])
+
+  const [svk2, setSVK2] = React.useState({})
+  const [cz2, setCZ2] = React.useState({})
+  const [ca2, setCA2] = React.useState({})
+  const [fin2, setFin2] = React.useState({})
+  const [swe2, setSwe2] = React.useState({})
+  const [usa2, setUsa2] = React.useState({})
+
+  const [svkData, setSvkData] = React.useState(0)
+  const [czData, setCzData] = React.useState(0)
+  const [caData, setCaData] = React.useState(0)
+  const [finData, setFinData] = React.useState(0)
+  const [sweData, setSweData] = React.useState(0)
+  const [useData, setUsaData] = React.useState(0)
+
+  const [disable, setDisable] = useState(false)
+
+ // WHO IS GONNA WIN?
+ const winner = [svk2, cz2, ca2, fin2, swe2, usa2]
+// console.log(winner)
+
 
 
  /*  TOTAL VOTES */
@@ -50,8 +70,9 @@ export default function Index () {
  const swe = donutsVotes[13] 
  const fra = donutsVotes[14] 
  const usa = donutsVotes[15] 
- 
 
+ const totalVots = totalVotes + svkData + czData + caData + finData + sweData
+ //console.log(totalVots)
 
 
 async function getData () {
@@ -78,6 +99,20 @@ async function getData () {
     const data = await res.json()
     
     setTeams(data)
+
+    setSVK2(data[0])
+    setCZ2(data[1])
+    setCA2(data[2])
+    setFin2(data[12])
+    setSwe2(data[13])
+    setUsa2(data[15])
+
+    setSvkData(data[0].champ)
+    setCzData(data[1].champ)
+    setCaData(data[2].champ)
+    setFinData(data[12].champ)
+    setSweData(data[13].champ)
+    setUsaData(data[15].champ)
        
     setLoading(false)
 
@@ -93,6 +128,22 @@ useEffect(() => {
 },[])
 
 
+const handleUpdate = async (id) => {
+  //console.log(id)
+
+  try {
+    await axios.put(`/api/winner/${id}/update`, {id} )
+
+    getData()
+    //setDisable(true)
+     
+   
+  } catch (error) {
+    console.log(error)
+  }  
+}
+
+
   return (
     <>
 
@@ -103,7 +154,7 @@ useEffect(() => {
                     </div> : 
           (
             <>
-              <div className="teamsContainer">
+            <div className="teamsContainer">
 
                 <div className="groupsAB">
                     
@@ -153,11 +204,45 @@ useEffect(() => {
                 </div>
             </div>
 
+
+           <div className="winner">
+            <h2 className='text-center mt-3 mb-4'> Who will be the Champion ? 🏆</h2>
+
+            <div className="vodingBatns">
+
+              {winner.map(btn => (
+                <button className='btn btn-outline-primary my-2 mx-1' key={btn?._id}
+                  disabled={disable}
+                  onClick={ () => handleUpdate(btn?._id)} >
+                  {btn?.name}
+                </button>
+              ))} 
+             
+            </div>
+
+            <Chart
+               type='bar'
+               width={'100%'}
+               height={350}
+          
+               series={[ 
+                {data: [svkData, czData, caData, finData, sweData, useData]} 
+                      ]}
+               
+               options={{
+                 colors: ['#3700ff'],
+                 labels: ['Slovakia', 'Czech Rep.', 'Canada', 'Finland', 'Sweden', 'USA'],
+                 
+               }}
+               >
+
+            </Chart>
+           </div>
+
             <button className='btn btn-outline-primary rounded-0 vstack mx-auto totalVotes fs-3'>
-              Total Votes: {totalVotes}
+              Total Votes: {totalVots}
             </button>
 
-         
           <div className="donuts">
            
               <div className="donutChart">
@@ -231,17 +316,36 @@ useEffect(() => {
           <div className="bgIMG">
             <img src="/bgImg.jpg" className='bgIm' alt="img" />
           </div>
+
            
-            
+
             </>
           ) 
         }
 
  
        
-
+      
  
       <style>{`
+
+      .vodingBatns {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin: 10px 0;
+      }
+
+      .winner {
+        position: relative;
+        width: 840px;
+        margin: 0 auto 50px;
+        background: white;
+        border: 1px solid gray;
+        border-radius: 7px;
+        z-index: 999999;
+      }
 
       .loadingImgBox {
         position: relative;
@@ -340,6 +444,30 @@ useEffect(() => {
         height: 100%;
         object-fit: cover;
       }
+
+      @media (max-width: 850px) { 
+         .winner {
+          position: relative;
+          width: 80%;
+          
+         }
+
+      .vodingBatns {
+        position: relative;
+        display: flex;
+        justify-content: space-around;
+        margin: 10px 0;
+      }
+
+      .winner {
+        position: relative;
+        
+        background: white;
+        border: 1px solid gray;
+        border-radius: 7px;
+        z-index: 999999;
+      }
+       }
      
       
      `}</style>
