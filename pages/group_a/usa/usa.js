@@ -82,7 +82,6 @@ useEffect(() => {
     <>
     
     <div className="arena">
-      <h2 className='text-center'>Hockey Championship 2023</h2>
       <h3 className='text-center mb-1'>Group A</h3>
       
           

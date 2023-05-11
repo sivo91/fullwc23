@@ -25,6 +25,16 @@ export default function Index () {
   const [fin2, setFin2] = React.useState({})
   const [swe2, setSwe2] = React.useState({})
   const [usa2, setUsa2] = React.useState({})
+  const [aus2, setAus2] = React.useState({})
+  const [ger2, setGer2] = React.useState({})
+  const [den2, setDen2] = React.useState({})
+  const [hu2, setHu2] = React.useState({})
+  const [fra2, setFra2] = React.useState({})
+  const [lat2, setLat2] = React.useState({})
+  const [kaz2, setKaz2] = React.useState({})
+  const [nor2, setNor2] = React.useState({})
+  const [slo2, setSlo2] = React.useState({})
+  const [swi2, setSwi2] = React.useState({})
 
   const [svkData, setSvkData] = React.useState(0)
   const [czData, setCzData] = React.useState(0)
@@ -32,11 +42,21 @@ export default function Index () {
   const [finData, setFinData] = React.useState(0)
   const [sweData, setSweData] = React.useState(0)
   const [useData, setUsaData] = React.useState(0)
+  const [ausData, setAusData] = React.useState(0)
+  const [gerData, setGerData] = React.useState(0)
+  const [denData, setDenData] = React.useState(0)
+  const [huData, setHuData] = React.useState(0)
+  const [fraData, setFraData] = React.useState(0)
+  const [latData, setLatData] = React.useState(0)
+  const [kazData, setKazData] = React.useState(0)
+  const [norData, setNorData] = React.useState(0)
+  const [sloData, setSloData] = React.useState(0)
+  const [swiData, setSwiData] = React.useState(0)
 
   const [disable, setDisable] = useState(false)
 
  // WHO IS GONNA WIN?
- const winner = [svk2, cz2, ca2, fin2, swe2, usa2]
+ const winner = [svk2, cz2, ca2, fin2, swe2, usa2, aus2, ger2, den2, hu2, fra2, lat2, kaz2, nor2, slo2, swi2]
 // console.log(winner)
 
 
@@ -106,6 +126,17 @@ async function getData () {
     setFin2(data[12])
     setSwe2(data[13])
     setUsa2(data[15])
+    setAus2(data[8])
+    setGer2(data[9])
+    setDen2(data[10])
+    setHu2(data[11])
+    setFra2(data[14])
+    setLat2(data[3])
+    setKaz2(data[4])
+    setNor2(data[5])
+    setSlo2(data[6])
+    setSwi2(data[7])
+
 
     setSvkData(data[0].champ)
     setCzData(data[1].champ)
@@ -113,6 +144,18 @@ async function getData () {
     setFinData(data[12].champ)
     setSweData(data[13].champ)
     setUsaData(data[15].champ)
+    setAusData(data[8].champ)
+    setGerData(data[9].champ)
+    setDenData(data[10].champ)
+    setHuData(data[11].champ)
+    setFraData(data[14].champ)
+    setLatData(data[3].champ)
+    setKazData(data[4].champ)
+    setNorData(data[5].champ)
+    setSloData(data[6].champ)
+    setSwiData(data[7].champ)
+
+    
        
     setLoading(false)
 
@@ -208,17 +251,22 @@ const handleUpdate = async (id) => {
            <div className="winner">
             <h2 className='text-center mt-3 mb-4'> Who will be the Champion ? 🏆</h2>
 
-            <div className="vodingBatns">
+         
 
-              {winner.map(btn => (
-                <button className='btn btn-outline-primary my-2 mx-1' key={btn?._id}
-                  disabled={disable}
-                  onClick={ () => handleUpdate(btn?._id)} >
-                  {btn?.name}
-                </button>
-              ))} 
+              <div className="vodingBatns">
+
+                {winner.map(btn => (
+                  <button className='btn btn-outline-primary my-2 mx-3' key={btn?._id}
+                    disabled={disable}
+                    onClick={ () => handleUpdate(btn?._id)} >
+                    {btn?.short}
+                  </button>
+                ))} 
              
-            </div>
+              </div>
+              
+
+            
 
             <Chart
                type='bar'
@@ -226,12 +274,12 @@ const handleUpdate = async (id) => {
                height={350}
           
                series={[ 
-                {data: [svkData, czData, caData, finData, sweData, useData]} 
+                {data: [svkData, czData, caData, finData, sweData, useData, ausData, gerData, denData, huData, fraData, latData, kazData, norData, sloData, swiData ]} 
                       ]}
                
                options={{
                  colors: ['#3700ff'],
-                 labels: ['Slovakia', 'Czech Rep.', 'Canada', 'Finland', 'Sweden', 'USA'],
+                 labels: ['SVK', 'CZ', 'CA', 'FiN', 'SWE', 'USA', 'AUS', 'GER', 'DEN', 'HU', 'FRA','LAT', 'KAZ', 'NOR', 'SLO', 'SWI'],
                  
                }}
                >
@@ -243,6 +291,8 @@ const handleUpdate = async (id) => {
               Total Votes: {totalVots}
             </button>
 
+
+
         {/*   CAN BE IN EXTRA COMPONENT */}
           <div className="donuts">
            
@@ -251,7 +301,7 @@ const handleUpdate = async (id) => {
                  type='donut'
                  width={370}
                  height={370}
-                 series={[ aus, ger, den, hu, fin, swe, fra, usa]}
+                 series={[ aus, ger, den, hu, fin, swe, fra, usa, aus, ger, den, hu, fra, lat, kaz, nor, slo, swi]}
 
                  options={{
                   labels: ['Austria', 'Germany', 'Denmark', 'Hungary', 'Finland', 'Sweden', 'France', 'USA'],
@@ -334,7 +384,7 @@ const handleUpdate = async (id) => {
         position: relative;
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-around;
+        justify-content: space-evenly;
         margin: 10px 0;
       }
 

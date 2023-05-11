@@ -73,33 +73,12 @@ useEffect(() => {
  
     let output = ''
 
-    if(path === '/slovakia/slovakia') {
-        output = ''
-        output = TeamName[0]
-    } else if (path === '/cechia/cechia') {
-       output = ''
-       output = TeamName[1]
-    } else if (path === '/canada/canda') {
+     if (path === '/canada/canada') {
        output = ''
        output = TeamName[2]
-    } else if (path === '/kazakhstan/kazakhstan') {
-       output = ''
-       output = TeamName[3]
-    } else if (path === '/latvia/latvia' ) {
-       output = ''
-       output = TeamName[4]
-    } else if (path === '/switzerland/switzerland') {
-       output = ''
-       output = TeamName[5]
-    } else if (path === '/slovenia/slovenia') {
-       output = ''
-       output = TeamName[6]
-    } else if (path === '/norway/norway') {
-       output = ''
-       output = TeamName.length - 1
     }
 
-    return <h2 className='text-center mb-2'>Team {output}</h2>
+     return <h2 className='text-center mb-2'>Team {output}</h2>
   } 
 
      
@@ -109,7 +88,6 @@ useEffect(() => {
     <>
     
     <div className="arena">
-      <h2 className='text-center'>Hockey Championship 2023</h2>
       <h3 className='text-center mb-1'>Group B</h3>
       
           

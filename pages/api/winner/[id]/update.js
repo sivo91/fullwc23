@@ -18,7 +18,17 @@ const handler = async (req, res) => {
   team.name === 'Canada' ? team.champ += 1 :
   team.name === 'Finland' ? team.champ += 1 :
   team.name === 'Sweden' ? team.champ += 1 :
-  team.name === 'USA' ? team.champ += 1 : null
+  team.name === 'USA' ? team.champ += 1 :
+  team.name === 'Austria' ? team.champ += 1 : 
+  team.name === 'Germany' ? team.champ += 1 :
+  team.name === 'Denmark' ? team.champ += 1 :
+  team.name === 'Hungary' ? team.champ += 1 : 
+  team.name === 'France' ? team.champ += 1 :
+  team.name === 'Latvia' ? team.champ += 1 :
+  team.name === 'Kazakhstan' ? team.champ += 1 :
+  team.name === 'Norway' ? team.champ += 1 :
+  team.name === 'Slovenia' ? team.champ += 1 :
+  team.name === 'Switzerland' ? team.champ += 1 : ''
 
   await team.save()
   console.log('game updateeeed !!!')
