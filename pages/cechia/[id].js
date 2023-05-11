@@ -111,9 +111,11 @@ useEffect(() => {
 
 // UPDATES
  const handleUpdate = async (id) => { 
+ console.log(id , paramID)
  
 try {
     await axios.put(`/api/team/${id}/cechia`, {id, paramID} )
+    
 
     getData()
     

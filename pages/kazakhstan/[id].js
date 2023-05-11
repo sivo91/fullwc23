@@ -120,8 +120,7 @@ try {
     if(teamX._id === id) toast.success(`${teamX.name} received extra vote !`)
     if(teamY._id === id) toast.success(`${teamY.name} received extra vote !`)
 
-    
-    
+
 
   } catch (error) {
     console.log(error)

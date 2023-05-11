@@ -4,12 +4,11 @@ import Team from '@/modules/Team'
 
 const handler = async (req, res) => {
   
-  //console.log('req body i', req.body)
 
   const id = req.body.id
-  const game = req.body.game
   const p = req.body.paramID
  
+  console.log(id, p)
 
   
 
@@ -28,11 +27,10 @@ const handler = async (req, res) => {
   const team = await Team.findById(id);
 
 // ak id = svk_cz tak len dva teams for update 
- p === 'svk_cz' && id === svk ? team.game1 += 1 :
- p === 'svk_cz' && id === cz ? team.game1 += 1 :
+/*  p === 'svk_cz' && id === svk ? team.game1 += 1 :
+ p === 'svk_cz' && id === cz ? team.game1 += 1 : */
  
  
-
  p === 'cz_svk' && id === cz ? team.game1 += 1 :
  p === 'cz_svk' && id === svk ? team.game1 += 1 :
 
@@ -51,12 +49,11 @@ const handler = async (req, res) => {
  p === 'cz_swi' && id === cz ? team.game7 += 1 :
  p === 'cz_swi' && id === swi ? team.game2 += 1 :
 
- p === 'cz_ca' && id === cz ? item.game2 += 1 :
- p === 'cz_ca' && id === ca ? item.game2 += 1 :
+ p === 'cz_ca' && id === cz ? team.game2 += 1 :
+ p === 'cz_ca' && id === ca ? team.game2 += 1 : ''
 
  
-
- p === 'ca_nor' && id === ca ? team.game5 += 1 :
+ /* p === 'ca_nor' && id === ca ? team.game5 += 1 :
  p === 'ca_cz' && id === ca ? team.game2 +=1 :
 
  p === 'kaz_cz' && id === lat ? team.game2 += 1 :
@@ -83,7 +80,7 @@ const handler = async (req, res) => {
  
 
  p === 'nor_cz' && id === nor ? team.game2 += 1 :
- p === 'nor_cz' && id === cz ? team.game5 += 1 : ''
+ p === 'nor_cz' && id === cz ? team.game5 += 1 : '' */
 
  
  
