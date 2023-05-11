@@ -29,9 +29,9 @@ const Navbar = () => {
         Hockey Championship 2023
       </h2>
 
-      <h2 className='text-center text-light phone'>
-        Ice Hockey App &apos;23
-      </h2>
+      <h6 className='text-center text-light pt-2 phone'>
+       Hockey Championship &apos;23
+      </h6>
       
 
       <div className='puck'
