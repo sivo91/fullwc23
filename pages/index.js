@@ -448,7 +448,7 @@ const handleUpdate = async (id) => {
       @media (max-width: 850px) { 
          .winner {
           position: relative;
-          width: 80%;
+          width: 90%;
           
          }
 
