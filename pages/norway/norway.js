@@ -100,7 +100,7 @@ useEffect(() => {
        output = TeamName[6]
     } else if (path === '/norway/norway') {
        output = ''
-       output = TeamName.length - 1
+       output = TeamName[7]
     }
 
     return <h2 className='text-center mb-2'>Team {output}</h2>

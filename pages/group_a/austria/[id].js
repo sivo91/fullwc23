@@ -228,7 +228,7 @@ try {
        </Link>
 
         
-       <ToastContainer position='top-center' limit={1} />
+      <ToastContainer position='bottom-center' limit={1} />
 
 
        <style>{`

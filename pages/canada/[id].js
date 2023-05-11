@@ -213,14 +213,14 @@ try {
         } 
       
    
-       <Link href={'/'}>
+       <Link href={'/canada/canada'}>
          <button className='btn btn-primary vstack mx-auto rounded-0 mb-5 px-5'>
           Back
          </button>
        </Link>
 
         
-       <ToastContainer position='top-center' limit={1} />
+       <ToastContainer position='bottom-center' limit={1} />
 
 
        <style>{`
