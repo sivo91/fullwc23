@@ -61,7 +61,7 @@ const sideBar = [
   },
   {
     url: '/slovenia/slovenia',
-    src: '/slo.png',
+    src: '/slovenia.png',
     name: 'Slovenia'
   },
   {
