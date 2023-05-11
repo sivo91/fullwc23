@@ -4,6 +4,7 @@ import Link from 'next/link'
 import axios from 'axios';
 import { Tooltip } from '@nextui-org/react';
 import dynamic from 'next/dynamic'
+import { ToastContainer, toast } from 'react-toastify';
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
 
 
@@ -54,6 +55,7 @@ export default function Index () {
   const [swiData, setSwiData] = React.useState(0)
 
   const [disable, setDisable] = useState(false)
+  const [alert, setAlert] = useState(false)
 
  // WHO IS GONNA WIN?
  const winner = [svk2, cz2, ca2, fin2, swe2, usa2, aus2, ger2, den2, hu2, fra2, lat2, kaz2, nor2, slo2, swi2]
@@ -91,29 +93,22 @@ export default function Index () {
  const fra = donutsVotes[14] 
  const usa = donutsVotes[15] 
 
- const totalVots = totalVotes + svkData + czData + caData + finData + sweData
- //console.log(totalVots)
+ 
+
+ const graphData = [svkData, czData, caData, finData, sweData, ausData, gerData, denData, huData, fraData, latData, kazData, norData, sloData, swiData]
+ 
+ let allData = 0
+ for(let i = 0; i < graphData.length; i++) {
+    allData += graphData[i]
+ }
+
+ const totalVots = totalVotes + allData
 
 
 async function getData () {
 
   try {
    setLoading(true)
-
-   /* axios('/api/getTeam/data') // ok
-   .then(res => {
-    setTeams(res.data) 
-    console.log(res.data)
-   }) */
-
-   /* const res = await axios('/api/getTeam/data') // ok
-   const mongo = await res.data
-   setTeams(mongo)   */  
-
-  
-   /*  const res = await fetch ('/api/getTeam/data', { next: { revalidate: 1} })
-    const data = await res.json()
-    setTeams(data) */
 
     const res = await fetch ('/api/getTeam/data', { cache: "no-cache" } ) // great
     const data = await res.json()
@@ -176,14 +171,21 @@ const handleUpdate = async (id) => {
 
   try {
     await axios.put(`/api/winner/${id}/update`, {id} )
-
+    
     getData()
     //setDisable(true)
-     
+
+    setAlert(true)
+
+    setTimeout(() => {
+      setAlert(false)
+    },3500)
    
   } catch (error) {
     console.log(error)
   }  
+
+ 
 }
 
 
@@ -197,6 +199,14 @@ const handleUpdate = async (id) => {
                     </div> : 
           (
             <>
+
+            {
+              alert && <div className="alert alert-success" role="alert">
+                          Thank you for voting!
+                        </div>
+            }
+
+
             <div className="teamsContainer">
 
                 <div className="groupsAB">
@@ -364,21 +374,26 @@ const handleUpdate = async (id) => {
 
           </div>
 
-          <div className="bgIMG">
-            <img src="/bgImg.jpg" className='bgIm' alt="img" />
-          </div>
-
-           
+            <div className="bgIMG">
+              <img src="/bgImg.jpg" className='bgIm' alt="img" />
+            </div>
 
             </>
           ) 
         }
 
  
-       
-      
  
       <style>{`
+
+      .alert {
+        position: fixed;
+        z-index: 999999999999999999999;
+        top: 120px;
+        width: 370px;
+        margin: 0 20px;
+        border: 1px solid #0c6b2c;
+      }
 
       .vodingBatns {
         position: relative;
