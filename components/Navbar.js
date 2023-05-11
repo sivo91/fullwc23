@@ -26,11 +26,11 @@ const Navbar = () => {
      <nav>
 
       <h2 className='text-center text-light titleNav'>
-        2023 IIHF Worl Championship
+        Hockey Championship 2023
       </h2>
 
       <h2 className='text-center text-light phone'>
-        2023 IIHF
+        Ice Hockey App &apos;23
       </h2>
       
 
