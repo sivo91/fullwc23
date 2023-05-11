@@ -26,9 +26,6 @@ const handler = async (req, res) => {
 
   const team = await Team.findById(id);
 
-// ak id = svk_cz tak len dva teams for update 
-/*  p === 'svk_cz' && id === svk ? team.game1 += 1 :
- p === 'svk_cz' && id === cz ? team.game1 += 1 : */
  
  
  p === 'cz_svk' && id === cz ? team.game1 += 1 :
@@ -52,39 +49,6 @@ const handler = async (req, res) => {
  p === 'cz_ca' && id === cz ? team.game2 += 1 :
  p === 'cz_ca' && id === ca ? team.game2 += 1 : ''
 
- 
- /* p === 'ca_nor' && id === ca ? team.game5 += 1 :
- p === 'ca_cz' && id === ca ? team.game2 +=1 :
-
- p === 'kaz_cz' && id === lat ? team.game2 += 1 :
- p === 'kaz_cz' && id === cz ? team.game4 += 1 :
-
- 
-
- p === 'lat_cz' && id === lat ? team.game2 += 1 :
- p === 'lat_cz' && id === cz ? team.game3 += 1 :
-
- p === 'lat_nor' && id === lat ? team.game5 += 1 :
- p === 'lat_nor' && id === nor ? team.game4 += 1 :
-
- 
-
- p === 'swi_cz' && id === swi ? team.game2 += 1 :
- p === 'swi_cz' && id === cz ? team.game7 += 1 :
-
- 
-
- p === 'slo_cz' && id === slo ? team.game2 += 1 :
- p === 'slo_cz' && id === cz ? team.game6 += 1 :
-
- 
-
- p === 'nor_cz' && id === nor ? team.game2 += 1 :
- p === 'nor_cz' && id === cz ? team.game5 += 1 : '' */
-
- 
- 
- 
  
 
 

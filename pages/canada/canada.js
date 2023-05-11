@@ -2,7 +2,6 @@
 /* eslint-disable @next/next/no-img-element */
 
 
-
 import Link from 'next/link'
 import { useRouter } from 'next/router';
 import { useEffect} from 'react';
@@ -10,13 +9,10 @@ import data from '@/utils/teams';
 //import groups from '@/utils/groups'
 
 
-
-
 const Team = () => {
 
 const router = useRouter()
 //const  {id} = router.query
-
 const path = router.pathname;
 
 

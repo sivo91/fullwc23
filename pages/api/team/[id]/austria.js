@@ -4,7 +4,7 @@ import Team from '@/modules/Team'
 
 const handler = async (req, res) => {
   
-  //console.log('req body i', req.body)
+
 
   const id = req.body.id
   const p = req.body.paramID
@@ -26,7 +26,7 @@ const handler = async (req, res) => {
 
   const team = await Team.findById(id);
 
-// ak id = svk_cz tak len dva teams for update 
+
  p === 'aus_ger' && id === aus ? team.game1 += 1 :
  p === 'aus_ger' && id === ger ? team.game1 += 1 :
 

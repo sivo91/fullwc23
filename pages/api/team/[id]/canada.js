@@ -26,16 +26,7 @@ const handler = async (req, res) => {
 
   const team = await Team.findById(id);
 
-// ak id = svk_cz tak len dva teams for update 
 
-
- p === 'svk_ca' && id === svk ? team.game2 +=1 :
- p === 'svk_ca' && id === ca ? team.game1 +=1 :
-
- 
-
- p === 'cz_ca' && id === cz ? item.game2 += 1 :
- p === 'cz_ca' && id === ca ? item.game2 += 1 :
 
  p === 'ca_lat' && id === ca ? team.game3 += 1 :
  p === 'ca_lat' && id === lat ? team.game3 += 1 :
@@ -53,27 +44,12 @@ const handler = async (req, res) => {
  p === 'ca_swi' && id === swi ? team.game3 += 1 :
 
  p === 'ca_nor' && id === ca ? team.game5 += 1 :
+ p === 'ca_nor' && id === nor ? team.game3 += 1 :
+
  p === 'ca_cz' && id === ca ? team.game2 +=1 :
-
- p === 'kaz_ca' && id === slo ? team.game3 += 1 :
- p === 'kaz_ca' && id === ca ? team.game4 += 1 :
-
- p === 'lat_ca' && id === lat ? team.game3 += 1 :
- p === 'lat_ca' && id === ca ? team.game3 += 1 :
-
- p === 'swi_ca' && id === swi ? team.game3 += 1 :
- p === 'swi_ca' && id === ca ? team.game7 += 1 :
-
- p === 'slo_ca' && id === slo ? team.game3 += 1 :
- p === 'slo_ca' && id === ca ? team.game6 += 1 :
-
- p === 'nor_ca' && id === nor ? team.game3 += 1 :
- p === 'nor_ca' && id === ca ? team.game5 += 1 : ''
+ p === 'ca_cz' && id === cz ? team.game2 +=1 : ''
 
  
- 
- 
-
 
   await team.save()
   console.log('game updateeeed !!!')

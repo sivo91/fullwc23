@@ -26,7 +26,7 @@ const  {id} = router.query
 const paramID = id
 
 
- //const [teams, setTeams] = useState([])
+
  const [teamX, setTeamX] = useState({})    
  const [teamY, setTeamY] = useState({})    
  const [loading, setLoading] = useState(false)
@@ -47,7 +47,7 @@ const paramID = id
   try {
    setLoading(true)
 
-    const res = await fetch ('/api/getTeam/data', { cache: "no-cache" } ) // great
+    const res = await fetch ('/api/getTeam/data', { cache: "no-cache" } ) 
     const mongo = await res.json()
 
 
@@ -202,7 +202,7 @@ try {
                             title:{ text:"Data Visualization"
                             } , 
                           noData:{text:"Empty Data"},                        
-                          colors:[ `${teamY?.color}` , `${teamX?.color}`],   //  "#ff0026"               
+                          colors:[ `${teamY?.color}` , `${teamX?.color}`],                
                           labels: [ `${teamY?.name}` , `${teamX?.name}` ]    // 
                           
                     }}   

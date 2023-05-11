@@ -26,7 +26,7 @@ const handler = async (req, res) => {
 
   const team = await Team.findById(id);
 
-// ak id = svk_cz tak len dva teams for update 
+
  p === 'fin_aus' && id === fin ? team.game1 += 1 :
  p === 'fin_aus' && id === aus ? team.game4 += 1 :
 

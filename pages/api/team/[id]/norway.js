@@ -4,14 +4,10 @@ import Team from '@/modules/Team'
 
 const handler = async (req, res) => {
   
-  //console.log('req body i', req.body)
-
   const id = req.body.id
   const game = req.body.game
   const p = req.body.paramID
  
-
-  
 
   const svk = '6452b3a7074a854ed44fd8bf'
   const cz =  '6452c8a2074a854ed44fd9f9'
@@ -27,41 +23,6 @@ const handler = async (req, res) => {
 
   const team = await Team.findById(id);
 
-// ak id = svk_cz tak len dva teams for update 
- 
-
- p === 'svk_nor' && id === svk ? team.game5 += 1 :
- p === 'svk_nor' && id === nor ? team.game1 += 1 :
-
- 
-
- p === 'cz_nor' && id === cz ? team.game5 += 1 :
- p === 'cz_nor' && id === nor ? team.game2 += 1 :
-
- 
-
- p === 'ca_nor' && id === ca ? team.game5 += 1 :
- p === 'ca_cz' && id === ca ? team.game2 +=1 :
-
- 
-
- p === 'kaz_nor' && id === kaz ? team.game5 += 1 :
- p === 'kaz_nor' && id === nor ? team.game5 += 1 :
-
- 
-
- p === 'lat_nor' && id === lat ? team.game5 += 1 :
- p === 'lat_nor' && id === nor ? team.game4 += 1 :
-
- 
-
- p === 'swi_nor' && id === swi ? team.game6 += 1 :
- p === 'swi_nor' && id === nor ? team.game7 += 1 :
-
-
-
- p === 'slo_nor' && id === slo ? team.game6 += 1 :
- p === 'slo_nor' && id === nor ? team.game6 += 1 :
 
  
 

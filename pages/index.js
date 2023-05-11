@@ -243,6 +243,7 @@ const handleUpdate = async (id) => {
               Total Votes: {totalVots}
             </button>
 
+        {/*   CAN BE IN EXTRA COMPONENT */}
           <div className="donuts">
            
               <div className="donutChart">

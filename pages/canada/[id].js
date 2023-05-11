@@ -9,10 +9,8 @@ import axios from 'axios';
 import Link from 'next/link';
 import { useRouter } from 'next/router'
 import { GiHockey } from "react-icons/gi";
-//import  Chart  from "react-apexcharts";
-import { Loading } from "@nextui-org/react";
-//import { useTeamsCountext } from '../context/teams_context'
 
+//import { useTeamsCountext } from '../context/teams_context'
 
 import dynamic from 'next/dynamic'
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false }); 
@@ -45,7 +43,7 @@ const paramID = id
   try {
    setLoading(true)
 
-    const res = await fetch ('/api/getTeam/data', { cache: "no-cache" } ) // great
+    const res = await fetch ('/api/getTeam/data', { cache: "no-cache" } )
     const mongo = await res.json()
 
 
@@ -189,14 +187,14 @@ try {
                     height={375}
 
                     // ABY SA SPRAVNE ZOBRAZOVAL GRAF MUSIA BYT HOSTIA PRVY !!!
-                    series={[ voteY, voteX ] }  // domaci , hostia              
+                    series={[ voteY, voteX ] }  // HOME / QUEST          
 
                     options={{
                             title:{ text:"Data Visualization"
                             } , 
                           noData:{text:"Empty Data"},                        
-                          colors:[ `${teamY?.color}` , `${teamX?.color}`],   //  "#ff0026"               
-                          labels: [ `${teamY?.name}` , `${teamX?.name}` ]    // 
+                          colors:[ `${teamY?.color}` , `${teamX?.color}`],                 
+                          labels: [ `${teamY?.name}` , `${teamX?.name}` ]    
                           
                     }}   
                     >           

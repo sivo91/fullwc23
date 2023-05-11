@@ -26,7 +26,7 @@ const handler = async (req, res) => {
 
   const team = await Team.findById(id);
 
-// ak id = svk_cz tak len dva teams for update 
+
  p === 'den_aus' && id === den ? team.game1 += 1 :
  p === 'den_aus' && id === aus ? team.game2 += 1 :
 
@@ -49,9 +49,6 @@ const handler = async (req, res) => {
  p === 'den_usa' && id === usa ? team.game3 += 1 : ''
 
  
- 
- 
-
 
   await team.save()
   console.log('game updateeeed !!!')

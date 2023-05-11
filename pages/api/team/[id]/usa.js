@@ -4,13 +4,10 @@ import Team from '@/modules/Team'
 
 const handler = async (req, res) => {
   
-  //console.log('req body i', req.body)
 
   const id = req.body.id
   const p = req.body.paramID
  
- console.log(p)
-  
 
   const aus = '6456ec5beb2ee1dbf5698af9'
   const ger =  '6456ec7ceb2ee1dbf5698afb'
@@ -26,7 +23,7 @@ const handler = async (req, res) => {
 
   const team = await Team.findById(id);
 
-// ak id = svk_cz tak len dva teams for update 
+
  p === 'usa_aus' && id === usa ? team.game1 += 1 :
  p === 'usa_aus' && id === aus ? team.game7 += 1 :
 
@@ -50,11 +47,8 @@ const handler = async (req, res) => {
 
  
  
- 
-
 
   await team.save()
-  console.log('game updateeeed !!!')
 
   await db.disconnect(); 
   res.status(200).json({ message: 'success '})

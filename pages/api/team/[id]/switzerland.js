@@ -4,13 +4,10 @@ import Team from '@/modules/Team'
 
 const handler = async (req, res) => {
   
-  //console.log('req body i', req.body)
 
   const id = req.body.id
   const p = req.body.paramID
  
-
-  
 
   const svk = '6452b3a7074a854ed44fd8bf'
   const cz =  '6452c8a2074a854ed44fd9f9'
@@ -26,32 +23,7 @@ const handler = async (req, res) => {
 
   const team = await Team.findById(id);
 
-// ak id = svk_cz tak len dva teams for update 
  
-
- p === 'svk_swi' && id === svk ? team.game7 += 1 :
- p === 'svk_swi' && id === swi ? team.game1 += 1 :
-
- 
-
- p === 'cz_swi' && id === cz ? team.game7 += 1 :
- p === 'cz_swi' && id === swi ? team.game2 += 1 :
-
-
-
- p === 'ca_swi' && id === ca ? team.game7 += 1 :
- p === 'ca_swi' && id === swi ? team.game3 += 1 :
-
- 
-
- p === 'kaz_swi' && id === kaz ? team.game7 += 1 :
- p === 'kaz_swi' && id === swi ? team.game5 += 1 :
-
- 
-
- p === 'lat_swi' && id === swi ? team.game7 +=1 :  
- p === 'lat_swi' && id === swi ? team.game4 +=1 :  
-
  p === 'swi_slo' && id === swi ? team.game1 += 1 :
  p === 'swi_slo' && id === slo ? team.game7 += 1 :
 
@@ -71,19 +43,8 @@ const handler = async (req, res) => {
  p === 'swi_cz' && id === cz ? team.game7 += 1 :
 
  p === 'swi_lat' && id === swi ? team.game4 +=1 :  
- p === 'swi_lat' && id === lat ? team.game7 +=1 :  
+ p === 'swi_lat' && id === lat ? team.game7 +=1 :  ''
 
- p === 'slo_swi' && id === slo ? team.game7 += 1 :
- p === 'slo_swi' && id === swi ? team.game7 += 1 :
-
- 
-
- p === 'nor_swi' && id === nor ? team.game7 += 1 :
- p === 'nor_swi' && id === swi ? team.game6 += 1 : ''
-
- 
- 
- 
 
 
   await team.save()
