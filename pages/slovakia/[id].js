@@ -79,7 +79,7 @@ const paramID = id
           } else if (id === 'svk_slo') {
             x.push(mongo[0])
             x.push(mongo[6])
-            vx = mongo[0].game1
+            vx = mongo[0].game6
             vy = mongo[6].game1
           } else if (id === 'svk_swi') {
             x.push(mongo[0])
