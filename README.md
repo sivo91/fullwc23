@@ -1,4 +1,4 @@
-MONGO_URI = your mongo link
+
 
 ## Hockey Championship 2023 
 

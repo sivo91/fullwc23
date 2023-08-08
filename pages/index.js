@@ -55,7 +55,7 @@ export default function Index () {
 
  // WHO IS GONNA WIN?
  const winner = [svk2, cz2, ca2, fin2, swe2, usa2, aus2, ger2, den2, hu2, fra2, lat2, kaz2, nor2, slo2, swi2]
- console.log(winner)
+ //console.log(winner)
 
 
 
@@ -69,7 +69,7 @@ export default function Index () {
     donutsVotes.push(x)
     totalVotes += x
   }
-  console.log(donutsVotes) // ok
+  //console.log(donutsVotes) // ok
 
 
  const svk = donutsVotes[0]
@@ -108,7 +108,10 @@ async function getData () {
 
     const res = await fetch ('/api/getTeam/data', { cache: "no-cache" } ) // great
     const data = await res.json()
-   console.log(data)
+   //console.log(data)
+
+    console.log('\n\n***********************\n\nWelcome!\nYou can find more projects here:\nhttps://sivo91.github.io/First_Website/html/intro.html\n\n\n**********************\n\n')
+
     setTeams(data)
 
     setSVK2(data[0])

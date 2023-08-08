@@ -37,6 +37,9 @@ const TeamSchema = new mongoose.Schema(
     },
     url1: {
       type: String
+    },
+    champ: {
+      type: Number
     }
   },
   {

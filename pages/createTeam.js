@@ -9,7 +9,7 @@ import Link from 'next/link';
 
 const CreateNew = () => {
 
-
+ const [champ, setChamp] = useState(0)
  const [game1, setGame1] = useState(0)
  const [game2, setGame2] = useState(0)
  const [game3, setGame3] = useState(0)
@@ -26,7 +26,7 @@ const CreateNew = () => {
  const [err, setErr] = useState(null)
 
  const data = {
-  name, game1, game2,game3, game4, game5, game6, game7, img, color, url1
+  name, game1, game2,game3, game4, game5, game6, game7, img, color, url1,champ
 }
 
 
@@ -76,6 +76,7 @@ const handleCreate = async (e) => {
      setColor('')
      setUrl1('')  // /slovakia/slovakia
      setImg('')
+     setChamp(0)
 
      fetchTeam()
   
@@ -144,6 +145,12 @@ const handleCreate = async (e) => {
                 value={color}
                 className='mt-2'
                 onChange={e => setColor(e.target.value)} />
+
+         <input type="number"
+                placeholder='champ | voting for winner'
+                className='my-2'
+                value={champ}
+                onChange={e => setChamp(e.target.value)} />
 
          <input type="number"
                 placeholder='game1'
