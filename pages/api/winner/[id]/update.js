@@ -12,9 +12,10 @@ const handler = async (req, res) => {
 
   await db.connect();
   const team = await Team.findById(id);
+  console.log(team)
 
   team.name === 'Slovakia' ? team.champ += 1 :
-  team.name === 'Czech Rep.' ? team.champ += 1 : 
+  team.name === 'Czech Rep' ? team.champ += 1 : 
   team.name === 'Canada' ? team.champ += 1 :
   team.name === 'Finland' ? team.champ += 1 :
   team.name === 'Sweden' ? team.champ += 1 :
@@ -28,7 +29,7 @@ const handler = async (req, res) => {
   team.name === 'Kazakhstan' ? team.champ += 1 :
   team.name === 'Norway' ? team.champ += 1 :
   team.name === 'Slovenia' ? team.champ += 1 :
-  team.name === 'Switzerland' ? team.champ += 1 : ''
+  team.name === 'Switzerland' ? team.champ += 1 : ' '
 
   await team.save()
   console.log('game updateeeed !!!')

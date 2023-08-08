@@ -55,7 +55,7 @@ export default function Index () {
 
  // WHO IS GONNA WIN?
  const winner = [svk2, cz2, ca2, fin2, swe2, usa2, aus2, ger2, den2, hu2, fra2, lat2, kaz2, nor2, slo2, swi2]
- //console.log(winner)
+ console.log(winner)
 
 
 
@@ -69,7 +69,7 @@ export default function Index () {
     donutsVotes.push(x)
     totalVotes += x
   }
- //console.log(donutsVotes[0]) // ok
+  console.log(donutsVotes) // ok
 
 
  const svk = donutsVotes[0]
@@ -265,7 +265,7 @@ const handleUpdate = async (id) => {
                   <button className='btn btn-outline-primary my-2 mx-3' key={btn?._id}
                     disabled={disable}
                     onClick={ () => handleUpdate(btn?._id)} >
-                    {btn?.short}
+                    {btn?.name}
                   </button>
                 ))} 
              
