@@ -7,14 +7,14 @@ const handler = async (req, res) => {
   const id = req.body.id
   const p = req.body.paramID
  
-  const svk = '6452b3a7074a854ed44fd8bf'
-  const cz =  '6452c8a2074a854ed44fd9f9'
-  const ca =  '6452cac5074a854ed44fda03'
-  const lat = '6452d97e2afc22ab614e05d2'
-  const kaz = '6452d9922afc22ab614e05d4'
-  const nor = '6452d9a52afc22ab614e05d6'
-  const slo = '6452d9b22afc22ab614e05d8'
-  const swi = '6452d9c82afc22ab614e05da'
+   const svk = '64d199039527b890e7025c0a'
+  const cz =  '64d19a8cec61ecbd9a5996f2'
+  const ca =  '64d19acdec61ecbd9a5996fa'
+  const lat = '64d19af4ec61ecbd9a5996fc'
+  const kaz = '64d19b31ec61ecbd9a599702'
+  const nor = '64d19b9cec61ecbd9a599704'
+  const slo = '64d19bbeec61ecbd9a599706'
+  const swi = '64d19beeec61ecbd9a599708'
 
   await db.connect();
 

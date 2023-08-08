@@ -49,9 +49,9 @@ const paramID = id
 
     const res = await fetch ('/api/getTeam/data', { cache: "no-cache" } ) // great
     const mongo = await res.json()
+    console.log(mongo[0])
 
-
-                      if(id === 'svk_cz') {          
+                  if(id === 'svk_cz') {          
             x.push(mongo[0])
             x.push(mongo[1])
             vx = mongo[0].game1
@@ -111,6 +111,7 @@ useEffect(() => {
 
 // UPDATES
  const handleUpdate = async (id) => { 
+  console.log(id)
  
 try {
     await axios.put(`/api/team/${id}/slovakia`, {id, paramID} )

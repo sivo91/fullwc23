@@ -11,10 +11,6 @@ const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
 
 
 
-
-
-
-
 export default function Index () {
 
   const [loading, setLoading] = React.useState(false)
@@ -59,7 +55,7 @@ export default function Index () {
 
  // WHO IS GONNA WIN?
  const winner = [svk2, cz2, ca2, fin2, swe2, usa2, aus2, ger2, den2, hu2, fra2, lat2, kaz2, nor2, slo2, swi2]
-// console.log(winner)
+ //console.log(winner)
 
 
 
@@ -103,7 +99,7 @@ export default function Index () {
  }
 
  const totalVots = totalVotes + allData
-
+ //console.log(totalVotes)
 
 async function getData () {
 
@@ -112,7 +108,7 @@ async function getData () {
 
     const res = await fetch ('/api/getTeam/data', { cache: "no-cache" } ) // great
     const data = await res.json()
-    
+   console.log(data)
     setTeams(data)
 
     setSVK2(data[0])

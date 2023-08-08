@@ -20,17 +20,20 @@ const CreateNew = () => {
  const [name, setName] = useState('')
  const [img, setImg] = useState('')
  const [color, setColor] = useState('')
- const [url, setUrl] = useState('')
+ const [url1, setUrl1] = useState('')
  const [x, setX] = useState([])
  const [loading, setLoading] = useState(false)
  const [err, setErr] = useState(null)
 
  const data = {
-  name, game1, game2,game3, game4, game5, game6, game7, img, color, url
+  name, game1, game2,game3, game4, game5, game6, game7, img, color, url1
 }
 
 
-const fetchData = async () => {
+
+
+useEffect(() => {
+  const fetchData = async () => {
     try {
       setLoading(true)
       const res = await axios.get('/api/getTeam/data');
@@ -46,7 +49,6 @@ const fetchData = async () => {
     }
   }
 
-useEffect(() => {
    fetchData();
 }, []); 
 
@@ -72,7 +74,7 @@ const handleCreate = async (e) => {
      setGame6(0)
      setGame7(0)
      setColor('')
-     setUrl('')  // /slovakia/slovakia
+     setUrl1('')  // /slovakia/slovakia
      setImg('')
 
      fetchTeam()
@@ -132,13 +134,13 @@ const handleCreate = async (e) => {
                 onChange={e => setName(e.target.value)} />
 
         <input type="text"
-                placeholder='path'
-                value={url}
+                placeholder='path  /slovakia/slovakia'
+                value={url1}
                 className='mt-2'
-                onChange={e => setUrl(e.target.value)} />
+                onChange={e => setUrl1(e.target.value)} />
 
         <input type="text"
-                placeholder='color'
+                placeholder='color  HEX #3ad7f0'
                 value={color}
                 className='mt-2'
                 onChange={e => setColor(e.target.value)} />

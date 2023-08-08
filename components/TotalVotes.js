@@ -14,6 +14,7 @@ async function getData () {
 
     const res = await fetch ('/api/getTeam/data', { cache: "no-cache" } ) // great
     const data = await res.json()
+    console.log(data)
     
     x.push(data)
     

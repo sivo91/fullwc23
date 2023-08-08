@@ -13,7 +13,7 @@ const Handler = async (req, res) => {
   await db.disconnect();
   } catch (error) {
     console.log(error)
-    res.status(400).sent({ error, msg: "something went wrong!"})
+    res.status(400).send({ error, msg: "something went wrong!"})
   }
   
   

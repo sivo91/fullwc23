@@ -12,14 +12,14 @@ const handler = async (req, res) => {
  console.log(p)
   
 
-  const aus = '6456ec5beb2ee1dbf5698af9'
-  const ger =  '6456ec7ceb2ee1dbf5698afb'
-  const den =  '6456ec94eb2ee1dbf5698afd'
-  const hu = '6456ecabeb2ee1dbf5698aff'
-  const fin = '6456ecc1eb2ee1dbf5698b01'
-  const swe = '6456ecd3eb2ee1dbf5698b03'
-  const fra = '6456eceaeb2ee1dbf5698b05'
-  const usa = '6456ecfceb2ee1dbf5698b07'
+   const aus = '64d19c11ec61ecbd9a59970a'
+  const ger = '64d19c35ec61ecbd9a59970c'
+  const den = '64d19c53ec61ecbd9a59970e'
+  const hu = '64d19c91ec61ecbd9a599712'
+  const fin = '64d19cb3ec61ecbd9a599714'
+  const swe = '64d19cddec61ecbd9a599716'
+  const fra = '64d19d14ec61ecbd9a599718'
+  const usa = '64d19d2dec61ecbd9a59971a' 
 
   await db.connect();
 
